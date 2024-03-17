@@ -1,36 +1,34 @@
 {
   "RootObject": {
-    "__guid": "c7523758-5ddb-479c-b477-5e3ebcc4f99b",
-    "Name": "Mine",
-    "Position": "0,-1024,896",
+    "__guid": "1834d43a-0ebb-49ba-a799-fcd5274a8352",
+    "Name": "mine",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "MineObstacle",
-        "__guid": "2bec647c-3a44-4c15-93a9-5a5793d5dd82"
+        "__guid": "6e490550-34b8-474e-a1a9-b9aa4cf54ea0"
       },
       {
         "__type": "SphereCollider",
-        "__guid": "6e5028fc-94ae-4e25-b53f-cf6164dfc833",
+        "__guid": "4814040c-0121-4fce-9ddb-bebda1424a78",
         "Center": "0,0,0",
         "IsTrigger": true,
-        "Radius": 301.7999,
+        "Radius": 140.39993,
         "Static": false
       }
     ],
     "Children": [
       {
-        "__guid": "ea29a985-e6d6-45dc-b31e-dca1d2e5ef99",
+        "__guid": "e9269abd-54ef-42e0-9d04-f26b6b97847d",
         "Name": "Mine",
-        "Position": "0,0,0",
         "Scale": "4,4,4",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "34c86ea1-2174-4944-a359-ef487dc411c2",
+            "__guid": "5e486127-b283-463a-b3a9-40212d3b9c38",
             "BodyGroups": 18446744073709551615,
             "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
             "Model": "models/dev/sphere.vmdl",

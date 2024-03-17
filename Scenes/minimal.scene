@@ -605,18 +605,8 @@
           "DifficultyCurve": {
             "rangey": "1,4",
             "frames": [
-              {},
               {
-                "x": 0.3482143,
-                "y": 0.3404255
-              },
-              {
-                "x": 0.6264881,
-                "y": 0.42033896
-              },
-              {
-                "x": 0.84821427,
-                "y": 1
+                "mode": "Linear"
               },
               {
                 "x": 1,
@@ -679,18 +669,19 @@
     {
       "__guid": "45771c20-b5c5-4403-9069-2a132f1b27d7",
       "Name": "Text",
-      "Position": "1264,1728,489.2885",
+      "Position": "1144,2424,760",
+      "Rotation": "0,0,-0.1305262,0.9914449",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "TextRenderer",
           "__guid": "1dceff1d-979b-42db-8521-4027d55d0c78",
-          "Color": "0,0,0,1",
+          "Color": "1,1,1,1",
           "FontFamily": "Rockboxcond12",
           "FontSize": 128,
           "Scale": 2,
-          "Text": "Shop"
+          "Text": "Shop\uD83D\uDED2"
         },
         {
           "__type": "EnabledIndicatorComponent",
@@ -701,8 +692,9 @@
     {
       "__guid": "18d4a52e-60ac-4155-89d7-92640caeb697",
       "Name": "Shop",
-      "Position": "1264,1728,96",
-      "Scale": "10,10,5",
+      "Position": "1169.495,2519.15,208",
+      "Rotation": "0,0,-0.1305262,0.9914449",
+      "Scale": "5.999999,5.5,5",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -1537,6 +1529,31 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "80363e62-1f1d-4132-9e89-fcd82b2151ea",
+      "Name": "shop",
+      "Position": "1022.301,2526.99,128.001",
+      "Rotation": "0.0000001826189,0.00000004754647,-0.1305262,0.9914449",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "5a4fc8b5-573a-4a21-9697-489f9eb929dd",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/shop.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "7bfb3a97-3229-488a-9338-81e426e91a36",
+          "IsTrigger": false,
+          "Model": "models/shop.vmdl",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1562,7 +1579,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T20:21:19.3903972\u002B10:00",
+  "LastSaved": "2024-03-17T20:57:02.9557185\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

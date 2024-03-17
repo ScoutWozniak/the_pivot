@@ -36,6 +36,7 @@ public sealed class DeliveryManagerComponent : Component
 		ShiftState = ShiftStates.DELIVERY;
 		DeliveriesUntilBreak = 3;
 		NextRound();
+		Log.Info( (int)DifficultyCurve.Evaluate( 0.5f ) );
 	}
 
 	// Use this method to go to next round, will automatically choose if break or delivery
