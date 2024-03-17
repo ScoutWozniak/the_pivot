@@ -11,10 +11,10 @@
         "__guid": "045eb1dd-cfe4-4e23-b857-0fabf7497201",
         "BodyGroups": 18446744073709551615,
         "CreateBoneObjects": false,
-        "MaterialOverride": "materials/triggermat.vmat",
+        "MaterialOverride": "materials/tools/toolstrigger.vmat",
         "Model": "models/dev/box.vmdl",
         "RenderType": "Off",
-        "Tint": "1,1,1,0.81"
+        "Tint": "0,1,0.51667,0.9"
       },
       {
         "__type": "BoxCollider",

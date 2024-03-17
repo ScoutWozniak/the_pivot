@@ -1,17 +1,17 @@
 {
   "RootObject": {
-    "__guid": "1834d43a-0ebb-49ba-a799-fcd5274a8352",
+    "__guid": "3e65306a-a9a0-4b10-850e-08049c7860c3",
     "Name": "mine",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "MineObstacle",
-        "__guid": "6e490550-34b8-474e-a1a9-b9aa4cf54ea0"
+        "__guid": "6d1ef107-4ea8-4256-92f0-0c125eb03042"
       },
       {
         "__type": "SphereCollider",
-        "__guid": "4814040c-0121-4fce-9ddb-bebda1424a78",
+        "__guid": "8b2a0e22-75c9-4484-b2c1-4ab66934c0f1",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 140.39993,
@@ -20,20 +20,18 @@
     ],
     "Children": [
       {
-        "__guid": "e9269abd-54ef-42e0-9d04-f26b6b97847d",
+        "__guid": "cb223028-756f-425c-af7b-8d84c257d595",
         "Name": "Mine",
-        "Scale": "4,4,4",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "5e486127-b283-463a-b3a9-40212d3b9c38",
+            "__guid": "5e4e4f9c-c28a-4877-99d4-bc060dffd9b6",
             "BodyGroups": 18446744073709551615,
-            "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
-            "Model": "models/dev/sphere.vmdl",
+            "Model": "models/mine.vmdl",
             "RenderType": "On",
-            "Tint": "1,0.11163,0.11163,1"
+            "Tint": "1,1,1,1"
           }
         ]
       }

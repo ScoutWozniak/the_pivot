@@ -1,42 +1,48 @@
 {
   "RootObject": {
-    "Id": "c728e87e-0ac8-476d-8c24-25d020727488",
+    "__guid": "7d75a0d5-8df7-454f-9ae5-1d49bb01f970",
     "Name": "box",
+    "Scale": "2,2,2",
     "Tags": "grab",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
+        "__guid": "7ff98a70-2fe1-4918-99c9-ca01c6285f5d",
         "BodyGroups": 18446744073709551615,
-        "MaterialOverride": "dev/helper/testgrid.vmat",
-        "Model": "models/dev/box.vmdl",
+        "Model": "models/box.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
       },
       {
         "__type": "Rigidbody",
+        "__guid": "e82fe114-f1ac-4674-8294-394e02b45ef5",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
         "Locking": {},
         "MassOverride": 0,
+        "MotionEnabled": true,
         "RigidbodyFlags": 0,
         "StartAsleep": false
       },
       {
         "__type": "BoxCollider",
+        "__guid": "b9d12669-2818-4105-9880-947d825b2d81",
         "Center": "0,0,0",
         "IsTrigger": false,
-        "Scale": "50,50,50",
+        "Scale": "32,32,32",
         "Static": false
       },
       {
         "__type": "ItemComponent",
+        "__guid": "e31f0af3-11c9-4f02-83eb-1244aaf3150a",
         "ItemType": "data/box.item"
       },
       {
         "__type": "HighlightOutline",
+        "__guid": "47c4fc94-e5fb-4b8f-ab2a-e8a437888218",
         "Color": "0.07442,0.86116,1,1",
         "InsideColor": "0,0,0,0",
         "InsideObscuredColor": "0,0,0,0",
@@ -49,5 +55,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

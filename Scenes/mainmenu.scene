@@ -90,6 +90,30 @@
             "component_type": "SkinnedModelRenderer"
           },
           "SubColor": "1,0,0,1"
+        },
+        {
+          "__type": "EnabledIndicatorComponent",
+          "__guid": "c1243a9f-1ec2-4f22-8bcf-975583640232",
+          "LookAtCam": false,
+          "OnComponentUpdate": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Component Update",
+              "id": "9b689679-8538-4dc8-88ea-7a402acf3d01"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "Propeller": {
+            "_type": "gameobject",
+            "go": "2f2e6bc9-748d-40ed-916e-5e494b019d49"
+          }
         }
       ],
       "Children": [
@@ -410,31 +434,6 @@
       "__Prefab": "prefabs/tower.prefab"
     },
     {
-      "__guid": "a4cb56df-15ca-4b51-9a2f-552d6d776490",
-      "Name": "Terrain",
-      "Position": "-5000,-5000,0",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Terrain",
-          "__guid": "dddaedf2-e253-4535-8f70-4d765074bb6a",
-          "ClipMapLodExtentTexels": 128,
-          "ClipMapLodLevels": 7,
-          "DebugView": "None",
-          "RenderType": "Off",
-          "TerrainDataFile": "new terrain.terrain",
-          "TerrainMaterial": "materials/core/terrain.vmat"
-        },
-        {
-          "__type": "TerrainCollider",
-          "__guid": "7d066ad6-7474-4dd4-b473-377b01ba10a8",
-          "IsTrigger": false,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "b36f2d5c-b889-45a5-8f05-653a28667503",
       "Name": "terrystart (1)",
       "Position": "271.3514,-836.5524,-1076.433",
@@ -459,6 +458,25 @@
           "Model": "models/infoterryfinal/terrystart.vmdl",
           "Static": false,
           "Surface": "surfaces/concrete.surface"
+        }
+      ]
+    },
+    {
+      "__guid": "a1b8569f-211a-41c1-8470-22db272b852e",
+      "Name": "Plane",
+      "Position": "0,0,-144",
+      "Scale": "100,100,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "d8cc3a3c-f766-4344-8d47-e9554c7cf809",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/sand/sand.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
@@ -486,7 +504,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-03-17T13:14:32.1518944\u002B10:00",
+  "LastSaved": "2024-03-17T21:34:34.9263174\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

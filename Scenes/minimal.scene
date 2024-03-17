@@ -685,7 +685,8 @@
         },
         {
           "__type": "EnabledIndicatorComponent",
-          "__guid": "9a0b89a0-c77c-400d-9201-99966fc21eb0"
+          "__guid": "9a0b89a0-c77c-400d-9201-99966fc21eb0",
+          "LookAtCam": true
         }
       ]
     },
@@ -705,7 +706,7 @@
           "MaterialOverride": "materials/tools/toolstrigger.vmat",
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,0.75"
+          "Tint": "0,0.81667,1,0.94"
         },
         {
           "__type": "BoxCollider",
@@ -1104,7 +1105,7 @@
     {
       "__guid": "3ff8a11d-d07f-4193-83ec-2a15d15ef012",
       "Name": "MineField",
-      "Position": "1034.813,2863.317,728.4512",
+      "Position": "2748.658,1796.624,728.4512",
       "Rotation": "0,0,0.1305262,0.991445",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1579,7 +1580,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T20:57:02.9557185\u002B10:00",
+  "LastSaved": "2024-03-17T21:34:55.4616775\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
