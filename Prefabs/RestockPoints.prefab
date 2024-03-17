@@ -1,0 +1,391 @@
+{
+  "RootObject": {
+    "__guid": "98c4247b-41ac-410f-ba69-5d6db1fc9d89",
+    "Name": "restockpoints",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "RestockComponent",
+        "__guid": "3b19a229-5812-4933-9402-c12d35ca5e32",
+        "LineRenderer": {
+          "_type": "gameobject",
+          "go": "24404c05-1ed6-4de0-a91b-0c24f68bff5e"
+        },
+        "SpawnPoint": {
+          "_type": "gameobject",
+          "go": "8331aa9c-0d15-45a8-ac72-f73ca00b8307"
+        },
+        "ToSpawn": {
+          "_type": "gameobject",
+          "prefab": "prefabs/box.prefab"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "24404c05-1ed6-4de0-a91b-0c24f68bff5e",
+        "Name": "Line",
+        "Position": "0,0,352",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "LineRenderer",
+            "__guid": "95c70d70-e5a8-4532-922c-b01d96aa7aa7",
+            "Color": {
+              "color": [
+                {
+                  "t": 0.5,
+                  "c": "0.05581,0.93705,1,1"
+                }
+              ],
+              "alpha": []
+            },
+            "EndCap": "None",
+            "Opaque": false,
+            "Points": [
+              {
+                "_type": "gameobject",
+                "go": "3e3fe7ea-e46f-49f5-b791-b2131f989197"
+              },
+              {
+                "_type": "gameobject",
+                "go": "3ac0503a-3d17-4950-9a30-459843cdc59a"
+              }
+            ],
+            "SplineBias": 0,
+            "SplineContinuity": 0,
+            "SplineInterpolation": 8,
+            "SplineTension": 0,
+            "StartCap": "None",
+            "Width": {
+              "rangey": "0,10",
+              "frames": [
+                {
+                  "y": 1
+                }
+              ]
+            },
+            "Wireframe": false
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "3e3fe7ea-e46f-49f5-b791-b2131f989197",
+            "Name": "Point 1",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "NetworkMode": 2
+          },
+          {
+            "__guid": "3ac0503a-3d17-4950-9a30-459843cdc59a",
+            "Name": "Point 2",
+            "Position": "0,0,4169.026",
+            "Enabled": true,
+            "NetworkMode": 2
+          }
+        ]
+      },
+      {
+        "__guid": "bc05327d-3327-4397-b00a-fb2b9deb8edd",
+        "Name": "Box",
+        "Position": "0,0,64.00005",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "MeshComponent",
+            "__guid": "e57e581c-63e6-407d-83b3-637b411e3359",
+            "Collision": "Mesh",
+            "Color": "1,1,1,1",
+            "IsTrigger": false,
+            "Mesh": {
+              "Topology": "H4sIAAAAAAAACk2VhW4jQRBEnbOTOGzHduLQJbngMTMzMzMzMzMzw\u002BdeP\u002Bmt5JVKLtdsT\u002B3uNIymUql/geFAf2BMIBOoCRwP1AcaA82B6YHOQHdgbGB5YEJgUmBKYHtgQWBRYElga2BnYHdgb\u002BB64EDgUOBI4HngQuBS4Erge\u002BBB4FHgSeBr4Gfgd\u002BBvIOVzjQtUBaoDeXltYNDnTweK8qzvlva92uV1vm/K\u002B1pdbwuccG/\u002BF\u002BTEndI/7X3wcuCM/txXknf4/TLun1OH85vy/ib3Q2/x/oxrVa416JVo1epJXMb3yXpeM/xPTJ\u002BcPWa5jv9AxdnOcZ34IXmT5501fkTOnsmF3usz1fjOdRXvmbxrl15ZnzUt79EredYkz1boT8w0Od9mlevEzJTzXde4Tvxsed78bDR\u002BrrzeM8uqT9Uffbxag3leL5\u002BoV6O53yCfrFeT9ZAzj3boT8wyOXm0y3ViVsrJ0z2uE79aXrKecsavlbPnqP7oS/VHn6/WYl02yxfqlbNWW\u002BSL9cpbvzwL1wb9idkm59pk3hesazjXFuujaK3Dudaplaz/onvO079kj8irr1cr2Eda5Rv1KtpbCvLNepXsN2XP7Ya5SMwxOTl4y3ViTso5zzuuE39a3mO/Kht/Vt5WkcfoR61H9P1q7eZOjfygXmXPrVZ\u002BWK8Ozyrpqy/0J\u002BaanDp75ToxN\u002BXU9xvXib8t77e/dht/V86e\u002B/RHv6o/\u002Bnm1Lvt0p/yiXt327i75Zb167Od99uYf\u002BhPzTE6/\u002BeU6MS/l9Ow/rhP/Wj7kPOgz/q2cPc/pj/5Uf/T7ar3OlbHyh3r1OWt65Y/16nf\u002BDNrLPuhPzDc5\u002BidnyYBzaVj9i/1x0Fk1ov5OjXjmF5w97\u002BmPzozDH/29GvszB9HgH/UintmIBv\u002BsFzHMS\u002BoNT\u002Bo7mXE8B17JN\u002BV\u002Beir9k15JX6RH0Y/oPfQZar5yblND1Au1QR2Qk\u002BQfuUZeccacJ2fHOfHNKuf2f7DXMwBkCAAA",
+              "TextureOrigin": "0,0,64.00005",
+              "Positions": [
+                "-256,-256,64.00002",
+                "256,-256,64.00002",
+                "256,256,64.00002",
+                "-256,256,64.00002",
+                "-256,256,31.99995",
+                "256,256,31.99995",
+                "256,-256,31.99995",
+                "-256,-256,31.99995",
+                "-128,-128,64.00002",
+                "128,-128,64.00002",
+                "128,128,64.00002",
+                "-128,128,64.00002",
+                "-128,-128,47.99995",
+                "128,-128,47.99995",
+                "128,128,47.99995",
+                "-128,128,47.99995",
+                "-79.99998,-80,47.99995",
+                "79.99998,-80,47.99995",
+                "79.99998,80,47.99995",
+                "-79.99998,80,47.99995",
+                "-79.99998,-80,63.99995",
+                "79.99998,-80,63.99995",
+                "79.99998,80,63.99995",
+                "-79.99998,80,63.99995",
+                "-240,240,31.99995",
+                "240,240,31.99995",
+                "240,-240,31.99995",
+                "-240,-240,31.99995",
+                "-240,240,15.99995",
+                "240,240,15.99995",
+                "240,-240,15.99995",
+                "-240,-240,15.99995",
+                "-256,256,15.99995",
+                "256,256,15.99995",
+                "256,-256,15.99995",
+                "-256,-256,15.99995",
+                "-256,256,-112.0001",
+                "256,256,-112.0001",
+                "256,-256,-112.0001",
+                "-256,-256,-112.0001"
+              ],
+              "TextureUAxis": [
+                "1,0,0",
+                "1,0,0",
+                "0,-1,0",
+                "0,1,0",
+                "-1,0,0",
+                "1,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0"
+              ],
+              "TextureVAxis": [
+                "0,-1,0",
+                "0,-1,0",
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0",
+                "0,0,0"
+              ],
+              "TextureScale": [
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25",
+                "0.25,0.25"
+              ],
+              "TextureAngle": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "MaterialIndex": [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "Materials": [
+                "materials/dev/primary_cyan_emissive.vmat"
+              ]
+            },
+            "Static": true
+          }
+        ]
+      },
+      {
+        "__guid": "977507cc-7415-4b5b-bff4-7c99fcbddaeb",
+        "Name": "Point Light",
+        "Position": "0,0,208",
+        "Tags": "light_point,light",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "PointLight",
+            "__guid": "b24a88b3-4e02-487c-b9f6-79ac35b08f16",
+            "Attenuation": 0.26,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "0.12093,0.79488,1,1",
+            "Radius": 400,
+            "Shadows": false
+          }
+        ]
+      },
+      {
+        "__guid": "8331aa9c-0d15-45a8-ac72-f73ca00b8307",
+        "Name": "RestockPoint",
+        "Position": "-0,-0.0000000502534,240",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

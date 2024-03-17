@@ -1,0 +1,150 @@
+{
+  "Id": "d46a899a-34d1-4038-b60f-b8b4c5e35550",
+  "GameObjects": [
+    {
+      "Id": "9ed01b6d-93d4-4277-aba7-2ffefa448abc",
+      "Name": "Camera",
+      "Position": "-736,0,0",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 108.82,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "SubCamFollowerComponent",
+          "Following": {
+            "_type": "gameobject",
+            "go": "5ea5f57b-ee5f-463f-87c5-55c110599d54"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "808a196b-5ab7-47f7-a8aa-15afce686180",
+      "Name": "Plane",
+      "Scale": "5,5,5",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "dcbce4b3-1dad-4de6-a0e6-d9c45e769869",
+      "Name": "Sun",
+      "Position": "0.0001095134,467.4462,235.7045",
+      "Rotation": "-0.09904574,0.3696438,-0.2391176,0.8923992",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.46081,0.70864,0.83256,1"
+        }
+      ]
+    },
+    {
+      "Id": "5ea5f57b-ee5f-463f-87c5-55c110599d54",
+      "Name": "sub",
+      "Position": "-32,-15.78039,128",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sub.vmdl",
+          "RenderType": "On",
+          "Tint": "0.7663,0.51985,0.82791,1"
+        },
+        {
+          "__type": "SubCustomisationComponent",
+          "Hat": "data/hats/builderhat.hat",
+          "Model": {
+            "_type": "component",
+            "go": "5ea5f57b-ee5f-463f-87c5-55c110599d54",
+            "component_type": "ModelRenderer"
+          },
+          "SubColor": "0.7663,0.51985,0.82791,1"
+        }
+      ]
+    },
+    {
+      "Id": "91b62fe0-4ef7-4718-b725-602c4d688e7c",
+      "Name": "Object",
+      "Position": "-0.0002022776,-85.30556,318.9068",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "subcustomisationtest",
+  "Description": "",
+  "LastSaved": "2024-03-13T21:04:06.0226758\u002B10:00",
+  "__references": []
+}

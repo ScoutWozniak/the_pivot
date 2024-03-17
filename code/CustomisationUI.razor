@@ -1,0 +1,71 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	
+	<div class="customiser">
+		<label>Customise</label>
+		<div class="sliderholder">
+			<label>R</label>
+			<SliderControl min="0" max="255" step="1" Value:bind=@R></SliderControl>
+		</div>
+
+		<div class="sliderholder">
+			<label>G</label>
+			<SliderControl min="0" max="255" step="1" Value:bind=@G></SliderControl>
+		</div>
+
+		<div class="sliderholder">
+			<label>B</label>
+			<SliderControl min="0" max="255" step="1" Value:bind=@B></SliderControl>
+		</div>
+		
+		<button onclick=@SaveData>Save And Return</button>
+	</div>
+</root>
+
+@code
+{
+	public Color SliderColor { get; set; } = new Color();
+	public int R { get; set; }
+	public int G { get; set; }
+	public int B { get; set; }
+
+	CustomisationData data;
+
+	[Property] SubCustomisationComponent SubCust { get; set; }
+
+	[Property] MainMenuComponent MainMenu { get; set; }
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		SubCust.SubColor = new Color(R / 255.0f, G / 255.0f, B / 255.0f);
+	}
+
+	protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		data = CustomisationData.Load();
+
+		R = data.R;
+		G = data.G;
+		B = data.B;
+	}
+
+	void SaveData()
+	{
+		data.R = R;
+		data.G = G;
+		data.B = B;
+		CustomisationData.Save(data);
+		MainMenu.Enabled = true;
+		Enabled = false;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	//protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

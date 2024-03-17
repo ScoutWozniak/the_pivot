@@ -1,0 +1,81 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	
+	<div class="header"><label>Upgrades: $@GetMoney()</label></div>
+
+	<div class="upgrades">
+		@if (!CheckHasUpgrade(2))
+		{
+			<div class="upgrade" onclick=@(() => BuyUpgrade(400.0f, 2))>
+				<div class="upgradebg"></div>
+				<label>Rocket Boosters</label>
+				<label>$400</label>
+				<label class="desc">Add boosters which allow for a short but sweet speed increase</label>
+
+			</div>
+		}
+
+		@if (!CheckHasUpgrade(0))
+		{
+			<div class="upgrade" onclick=@(() => BuyUpgrade(800.0f, 0))>
+				<label>+9 Charisma</label>
+				<label>$800</label>
+				<label class="desc">Develop sweettalking skills that increase the time limit</label>
+			</div>
+		}
+
+		@if (!CheckHasUpgrade(1))
+		{
+			<div class="upgrade" onclick=@(() => BuyUpgrade(1600.0f, 1))>
+				<label>Propeller v2</label>
+				<label>$1600</label>
+				<label class="desc">Upgrade your propellers to make movement as smooth as butter</label>
+			</div>
+
+		}
+	</div>
+
+	<div class="close">
+		<button onclick=@(() => this.Enabled = false)>Close</button>
+	</div>
+</root>
+
+@code
+{
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( GetMoney() );
+
+	void BuyUpgrade(float cost, int val)
+	{
+		Log.Info("test");
+		if (GetMoney() >= cost)
+			Sound.Play("click1");
+		else {
+			Sound.Play("ui.error");
+			return;
+		}
+		TakeMoney(cost);
+		Scene.Components.Get<UpgradeManager>(FindMode.InDescendants).Upgrade(val);
+	}
+
+	float GetMoney()
+	{
+		return Scene.Components.Get<CashMoney>(FindMode.EverythingInDescendants).Cash;
+	}
+
+	void TakeMoney(float amnt)
+	{
+		Scene.Components.Get<CashMoney>(FindMode.EverythingInDescendants).Cash -= amnt;
+	}
+
+	bool CheckHasUpgrade(int u)
+	{
+		return Scene.Components.Get<UpgradeManager>(FindMode.InDescendants).HasUpgrade(u);
+	}
+}

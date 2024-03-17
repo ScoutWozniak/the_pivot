@@ -1,0 +1,50 @@
+{
+  "RootObject": {
+    "__guid": "c7523758-5ddb-479c-b477-5e3ebcc4f99b",
+    "Name": "Mine",
+    "Position": "0,-1024,896",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "MineObstacle",
+        "__guid": "2bec647c-3a44-4c15-93a9-5a5793d5dd82"
+      },
+      {
+        "__type": "SphereCollider",
+        "__guid": "6e5028fc-94ae-4e25-b53f-cf6164dfc833",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 301.7999,
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "ea29a985-e6d6-45dc-b31e-dca1d2e5ef99",
+        "Name": "Mine",
+        "Position": "0,0,0",
+        "Scale": "4,4,4",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "34c86ea1-2174-4944-a359-ef487dc411c2",
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
+            "Model": "models/dev/sphere.vmdl",
+            "RenderType": "On",
+            "Tint": "1,0.11163,0.11163,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

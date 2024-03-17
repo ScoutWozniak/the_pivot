@@ -1,0 +1,98 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits PanelComponent
+
+<root>
+	<div class="timerholder">
+		@if (!OnBreak())
+		{
+			<label>Time Left: @GetTimeLeft()</label>
+		}
+		else
+		{
+			<label>Break Left: @GetTimeLeft()</label>
+		}
+		<label>$@GetMoney()</label>
+
+		<label>Delivered: @GetCurrentDeliveries() /  @(GetMaxDeliveries())</label>
+	</div>
+
+	<div class="grab" >
+		<label style="color: @GetGrabColor()">SPACE - GRAB</label>
+		@if (CanBoost())
+		{
+			<label style="color: @GetBoostColor()">SHIFT - BLAST</label>
+		}
+	</div>
+		
+
+</root>
+
+@code
+{
+
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(GetTimeLeft(), GetGrabColor(), GetBoostColor());
+
+	public float GetTimeLeft()
+	{
+		var manager = Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants);
+		float time = manager.GetRoundMaxTime() - manager.RoundTime;
+		return MathF.Round(time);
+	}
+
+	public bool OnBreak()
+	{
+		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).IsOnBreak();
+	}
+
+	float GetMoney()
+	{
+		return Scene.Components.Get<CashMoney>(FindMode.EverythingInDescendants).Cash;
+	}
+
+	bool CanBoost()
+	{
+		return Scene.Components.Get<UpgradeManager>(FindMode.EverythingInDescendants).CanRocketBoost();
+	}
+
+	string GetBoostColor()
+	{
+		if (!GetPlayer().IsBoosting && GetPlayer().BoostCoolDownDone)
+			return "white";
+		else
+			return "dimgrey";
+	}
+
+	bool IsDelivering()
+	{
+		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).ShiftState == ShiftStates.DELIVERY;
+	}
+
+	int GetCurrentDeliveries()
+	{
+		return GetMaxDeliveries() - Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).CurrentZones.Count;
+	}
+
+	int GetMaxDeliveries()
+	{
+		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).GetNumDeliveries();
+	}
+
+	string GetGrabColor()
+	{
+		if (GetPlayer().CanGrab)
+			return "white";
+		else
+			return "dimgrey";
+	}
+
+	SubmarineComponent GetPlayer()
+	{
+		return Scene.Components.Get<SubmarineComponent>(FindMode.EverythingInDescendants);
+	}
+}

@@ -1,0 +1,35 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="GameOver">
+		<label>Game Over</label>
+		<button onclick=@RestartScene>Restart</button>
+	</div>
+</root>
+
+@code
+{
+	[Property] SceneFile file { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	//protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+
+	static public void GameOver()
+	{
+		var ui = Game.ActiveScene.Components.Get<FailUicomponent>(FindMode.EverythingInDescendants);
+		if (ui.Enabled)
+			return;
+
+		Game.ActiveScene.Components.Get<GameHudComponent>(FindMode.EverythingInDescendants).Enabled = false;
+		ui.Enabled = true;
+	}
+
+	void RestartScene()
+	{
+		GameManager.ActiveScene.Load(file);
+	}
+}

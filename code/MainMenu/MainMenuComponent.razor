@@ -1,0 +1,38 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<h1>Free Delivery!</h1>
+	<h2>A Prototype By k8woz</h2>
+
+	<button onclick=@(() => OnPlay())>Play</button>
+	<button onclick=@OpenCustom>Customise</button>
+</root>
+
+@code
+{
+
+	[Property] MenuOpenningComponent Opening { get; set; }
+	[Property] CustomisationUI CustomUI { get; set; }
+
+	[Property] SceneFile NextScene { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	//protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+
+	void OnPlay()
+	{
+		GameObject.Enabled = false;
+		FadeComponent.GlobalFadeOut();
+		_ = Opening.WaitABit();
+	}
+
+	void OpenCustom()
+	{
+		CustomUI.Enabled = true;
+		Enabled = false;
+	}
+}

@@ -1,0 +1,496 @@
+{
+  "__guid": "99e0ff1c-eacc-4913-b4af-a26a2e82f309",
+  "GameObjects": [
+    {
+      "__guid": "d7e7d888-df51-40a5-bf9f-6afd0140e90f",
+      "Name": "Music",
+      "Position": "-36,-100,68",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SoundPointComponent",
+          "__guid": "e0313d5a-e97f-4fda-99ab-75c852f827e3",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": true,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "SoundEvent": "sounds/welcome_home.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "96140c84-c4d0-4a69-a202-ef0ea10e0f67",
+      "Name": "HUD",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "fe83720d-31fc-43f4-8221-b7923a1dce94",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenuComponent",
+          "__guid": "ea454db5-6781-404e-a0b7-2957a0d97dcb",
+          "CustomUI": {
+            "_type": "component",
+            "component_id": "f3423dd8-0946-4597-b892-0a606e65a5a4",
+            "go": "44c838c2-7218-4ffa-be3a-272eec03ce48",
+            "component_type": "CustomisationUI"
+          },
+          "Opening": {
+            "_type": "component",
+            "component_id": "487b32f4-281e-4757-b434-b7eb8cbc5547",
+            "go": "8de2e9c3-4b9f-4d7f-9e22-2a75add43032",
+            "component_type": "MenuOpenningComponent"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "ba49d320-8f96-4201-86c8-0518c018ff18",
+      "Name": "Player",
+      "Position": "344,-112,120",
+      "Scale": "0.5,0.5,0.5",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "aa66ce62-84ec-4de1-955b-b3ba32e28125",
+          "BodyGroups": 18446744073709551615,
+          "CreateBoneObjects": false,
+          "Model": "models/sub.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SubCustomisationComponent",
+          "__guid": "673728a8-0338-4a61-9173-81984756a1bb",
+          "Model": {
+            "_type": "component",
+            "component_id": "aa66ce62-84ec-4de1-955b-b3ba32e28125",
+            "go": "ba49d320-8f96-4201-86c8-0518c018ff18",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "SubColor": "1,0,0,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "2f2e6bc9-748d-40ed-916e-5e494b019d49",
+          "Name": "Box",
+          "Position": "160,0,0",
+          "Rotation": "0,0.7071067,0,0.7071068",
+          "Scale": "2,2,2",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "MeshComponent",
+              "__guid": "e4bea421-09ec-407e-a5d1-1de7333606bb",
+              "Collision": "Mesh",
+              "Color": "1,1,1,1",
+              "IsTrigger": false,
+              "Mesh": {
+                "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+                "TextureOrigin": "8160,4128,-0.002189636",
+                "Positions": [
+                  "-31.9999,-32.00024,-0.00001907351",
+                  "32.0001,-32.00026,-0.0000305176",
+                  "32.00014,31.99954,0.00001907346",
+                  "-31.99986,31.99958,0.00003051756"
+                ],
+                "TextureUAxis": [
+                  "1,0,0"
+                ],
+                "TextureVAxis": [
+                  "0,-1,0"
+                ],
+                "TextureScale": [
+                  "0.25,0.25"
+                ],
+                "TextureAngle": [
+                  0
+                ],
+                "MaterialIndex": [
+                  0
+                ],
+                "Materials": [
+                  "materials/propellor.vmat"
+                ]
+              },
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "925759b4-5f57-4abb-ae88-d2056eccfa5d",
+      "Name": "Sun",
+      "Position": "-91.64433,-28.36847,202.4167",
+      "Rotation": "-0.145888,0.9646449,0.03282162,0.2170245",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "1000aca2-211e-4ab8-b0ce-e0c003a2adf2",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.04712,0.35652,0.56279,1",
+          "Shadows": true,
+          "SkyColor": "0.29344,0.25317,0.65581,1"
+        }
+      ]
+    },
+    {
+      "__guid": "0f2b9e25-9b23-4245-9446-0b5ce1a80ee7",
+      "Name": "Point Light (1)",
+      "Position": "224,-112,128",
+      "Rotation": "-0.00000004371139,1,-0.00000004371139,0.000000000000001910685",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "__guid": "89ac858f-0632-4c3a-940a-5ec7db21a70f",
+          "Attenuation": 1,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.64186,0.91643,1,1",
+          "Radius": 400,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "bd33b800-1a1d-4259-b25f-f4c0ea5a6a2d",
+      "Name": "Sky",
+      "Position": "160,-104,176",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "574c1ea2-c7c3-4e54-8ffa-2b081a28e97e",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        },
+        {
+          "__type": "SkyBox2D",
+          "__guid": "30bc8f0a-ac9a-45d2-8ed1-dfaed9c0fa59",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "0,0.14326,0.7814,1"
+        }
+      ]
+    },
+    {
+      "__guid": "e524add5-ce79-4060-b5f4-e949b8853d45",
+      "Name": "Rotate",
+      "Position": "344,-112,120",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "OrbitComponent",
+          "__guid": "689a6593-3b86-410d-8efc-6fdfa440ff4f",
+          "Speed": 20
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "42273529-e419-4806-a2ad-47bcc7e9a359",
+          "Name": "Camera",
+          "Position": "-266.7115,-0.00003051758,104.4836",
+          "Rotation": "0,0.1640723,0,0.9864483",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__guid": "99961047-b377-4676-b018-e53cc1374c0c",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 30000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Bloom",
+              "__guid": "98e03705-a546-4ec3-9834-448d206c4a31",
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 1.26,
+              "Threshold": 0.52,
+              "ThresholdWidth": 0.34
+            },
+            {
+              "__type": "Tonemapping",
+              "__guid": "0a6901be-7cf8-47eb-a7a0-1e16e19e206f",
+              "ExposureCompensation": 0,
+              "MaximumExposure": 2,
+              "MinimumExposure": 1,
+              "Rate": 1
+            },
+            {
+              "__type": "Sharpen",
+              "__guid": "286307ab-acfc-4bef-a908-904fd8c72a68",
+              "Scale": 0.2
+            },
+            {
+              "__type": "AudioListener",
+              "__guid": "9400f543-2761-4fb0-87b8-2731299a72a1",
+              "UseCameraDirection": true
+            },
+            {
+              "__type": "Pixelate",
+              "__guid": "011ec3bb-1116-46a2-b1e6-85fc3f14bdae",
+              "Scale": 0.001
+            },
+            {
+              "__type": "DepthOfField",
+              "__guid": "9b0cd956-f842-4389-93d3-79aa7dc28e94",
+              "BackBlur": true,
+              "BlurSize": 100,
+              "FocalDistance": 274.14,
+              "FrontBlur": false
+            },
+            {
+              "__type": "Highlight",
+              "__guid": "d0ed918c-3406-4787-83bc-96d74b56851e"
+            },
+            {
+              "__type": "ColorAdjustments",
+              "__guid": "e4f69c72-1764-4044-97a5-6b9b18adee77",
+              "Brightness": 1.2,
+              "Contrast": 0.96,
+              "HueRotate": 0,
+              "Saturation": 1.18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "44c838c2-7218-4ffa-be3a-272eec03ce48",
+      "Name": "CustomisationHUD",
+      "Position": "137.969,0.000008223596,19.55008",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "fbd2444a-39b9-45db-aa3f-7f9dd58105d8",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "CustomisationUI",
+          "__guid": "f3423dd8-0946-4597-b892-0a606e65a5a4",
+          "__enabled": false,
+          "MainMenu": {
+            "_type": "component",
+            "component_id": "ea454db5-6781-404e-a0b7-2957a0d97dcb",
+            "go": "96140c84-c4d0-4a69-a202-ef0ea10e0f67",
+            "component_type": "MainMenuComponent"
+          },
+          "SubCust": {
+            "_type": "component",
+            "component_id": "673728a8-0338-4a61-9173-81984756a1bb",
+            "go": "ba49d320-8f96-4201-86c8-0518c018ff18",
+            "component_type": "SubCustomisationComponent"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "e4e534d6-c1e0-4ae9-a103-76b2bbbc9163",
+      "Name": "FadeInHud",
+      "Position": "0,458.2867,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "c1118987-a868-4a28-8bcb-470657087041",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "BlackPanel",
+          "__guid": "e63cd425-b13e-49ba-b80e-24eb38fb0dbe"
+        },
+        {
+          "__type": "FadeComponent",
+          "__guid": "38542209-0f2b-49f0-b3d4-8e95023dfcac",
+          "Time": 1
+        }
+      ]
+    },
+    {
+      "__guid": "8de2e9c3-4b9f-4d7f-9e22-2a75add43032",
+      "Name": "Object",
+      "Position": "-1337.442,230.0739,132.1284",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MenuOpenningComponent",
+          "__guid": "487b32f4-281e-4757-b434-b7eb8cbc5547",
+          "NextScene": "scenes/minimal.scene"
+        }
+      ]
+    },
+    {
+      "__guid": "0d186de4-dcc0-4122-9077-e258144e8b3d",
+      "Name": "tower",
+      "Position": "1305.042,972.7192,50.23926",
+      "Rotation": "0.6990474,0.02415241,0.1125198,0.705754",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/tower.prefab"
+    },
+    {
+      "__guid": "a4cb56df-15ca-4b51-9a2f-552d6d776490",
+      "Name": "Terrain",
+      "Position": "-5000,-5000,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Terrain",
+          "__guid": "dddaedf2-e253-4535-8f70-4d765074bb6a",
+          "ClipMapLodExtentTexels": 128,
+          "ClipMapLodLevels": 7,
+          "DebugView": "None",
+          "RenderType": "Off",
+          "TerrainDataFile": "new terrain.terrain",
+          "TerrainMaterial": "materials/core/terrain.vmat"
+        },
+        {
+          "__type": "TerrainCollider",
+          "__guid": "7d066ad6-7474-4dd4-b473-377b01ba10a8",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "b36f2d5c-b889-45a5-8f05-653a28667503",
+      "Name": "terrystart (1)",
+      "Position": "271.3514,-836.5524,-1076.433",
+      "Rotation": "-0.1033118,-0.3050302,0.44146,0.837494",
+      "Scale": "32.724,32.724,32.724",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "5500e92f-ee35-4c96-95d8-a68c21369ba4",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/dev/dev_nonmetal_rough90.vmat",
+          "Model": "models/infoterryfinal/terrystart.vmdl",
+          "RenderType": "On",
+          "Tint": "0.24651,0.24651,0.24651,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "6c3d34f2-16ae-4e33-97a2-722fba17b1b8",
+          "IsTrigger": false,
+          "Model": "models/infoterryfinal/terrystart.vmdl",
+          "Static": false,
+          "Surface": "surfaces/concrete.surface"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "mainmenu",
+  "Description": "",
+  "LastSaved": "2024-03-17T13:14:32.1518944\u002B10:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "carsonk.mus_welcome_home",
+    "pilgrim.terrystart"
+  ]
+}

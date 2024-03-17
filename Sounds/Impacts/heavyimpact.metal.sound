@@ -1,0 +1,23 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "0.60,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/impacts/impactplate_heavy_000.vsnd",
+    "sounds/impacts/impactplate_heavy_001.vsnd",
+    "sounds/impacts/impactplate_heavy_002.vsnd",
+    "sounds/impacts/impactplate_heavy_003.vsnd",
+    "sounds/impacts/impactplate_heavy_004.vsnd"
+  ],
+  "Occlusion": true,
+  "Reflections": true,
+  "AirAbsorption": true,
+  "Transmission": true,
+  "OcclusionRadius": 64,
+  "DistanceAttenuation": true,
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

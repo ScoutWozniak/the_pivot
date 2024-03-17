@@ -1,0 +1,50 @@
+{
+  "RootObject": {
+    "__guid": "b18157a7-fa57-4889-b0cb-f492e99dbb2e",
+    "Name": "house",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "4d1d0a95-90a1-42b3-b1f3-c4e81c54376c",
+        "Name": "DeliveryZone",
+        "Position": "340,0,-24",
+        "Scale": "5,5,2",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "__Prefab": "prefabs/deliverypoint.prefab"
+      },
+      {
+        "__guid": "79cadb9a-e3ca-485d-b65f-3e92ff55c199",
+        "Name": "house",
+        "Position": "-120,39.99997,64",
+        "Rotation": "0,0,-0.7071067,0.7071068",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "e3e51ba3-a86b-469f-a950-92c888628d84",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/house.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__guid": "a2f4869a-744d-4154-9592-90fd5873703f",
+            "IsTrigger": false,
+            "Model": "models/house.vmdl",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

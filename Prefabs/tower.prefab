@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "__guid": "0d186de4-dcc0-4122-9077-e258144e8b3d",
+    "Name": "tower",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "d7863e1c-f850-44b3-b644-45af9968b827",
+        "Name": "tower",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "0eba553d-6c42-48d9-bc20-81c3a146f4f7",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/tower.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__guid": "30fe8140-6ce7-4b23-bc85-9370d9714302",
+            "IsTrigger": false,
+            "Model": "models/tower.vmdl",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

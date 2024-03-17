@@ -1,0 +1,22 @@
+{
+  "UI": true,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/narrator/win/win01.vsnd",
+    "sounds/narrator/win/win02.vsnd",
+    "sounds/narrator/win/win03.vsnd",
+    "sounds/narrator/win/win04.vsnd"
+  ],
+  "Occlusion": true,
+  "Reflections": true,
+  "AirAbsorption": true,
+  "Transmission": true,
+  "OcclusionRadius": 64,
+  "DistanceAttenuation": true,
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

@@ -1,0 +1,49 @@
+FailUicomponent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	pointer-events: all;
+
+	.GameOver {
+		width: 50%;
+		height: 50%;
+		background-color: rgb(85, 85, 85, 1);
+		border-image: url("images/panel-border-000.png") 32px round;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+	}
+
+	label {
+		font-family: Rockboxcond12;
+		font-size: 75px;
+		color: #fff;
+		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+		text-stroke: 5px red;
+		padding: 2%;
+	}
+
+	button {
+		border-image: url("images/panel-border-000.png") 32px round;
+		background-color: rgb(90, 196, 255);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		label {
+			font-size: 30px;
+			text-stroke: 5px black;
+		}
+	}
+
+	button:hover {
+		background-color: rgb(255, 106, 0);
+	}
+}

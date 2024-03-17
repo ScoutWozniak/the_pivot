@@ -1,0 +1,54 @@
+GameHudComponent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	font-family: Rockboxcond12;
+	font-size: 50px;
+	color: #fff;
+
+	.timerholder {
+		position: absolute;
+		top: 0;
+		width: 25%;
+		height: 10%;
+		justify-content: space-around;
+		align-items: center;
+
+		label {
+			filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+			text-stroke: 5px black;
+			padding: 2%;
+		}
+	}
+
+	.grab {
+		position: absolute;
+		width: 100%;
+		height: 10%;
+		bottom: 0;
+		left: 0;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+		text-stroke: 5px black;
+		padding: 2%;
+		gap: 15%;
+		label {
+
+		}
+	}
+	/*	.grab {
+		width: 10%;
+		height: 0;
+		padding-top: 10%;
+		background-color: red;
+	}*/
+}

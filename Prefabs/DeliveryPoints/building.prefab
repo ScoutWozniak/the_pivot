@@ -1,0 +1,49 @@
+{
+  "RootObject": {
+    "__guid": "faeee700-f2f8-41e9-85bd-2d27b09920b0",
+    "Name": "building",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "a661d131-0220-45e6-84a9-b3655df5f633",
+        "Name": "deliverypoint",
+        "Position": "0,0,832",
+        "Scale": "5,5,2",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "__Prefab": "prefabs/deliverypoint.prefab"
+      },
+      {
+        "__guid": "f7883198-e72f-48e8-9656-ef45ebaed4b3",
+        "Name": "building",
+        "Position": "0,0,480",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "67782360-d610-4223-aaae-0c99ccc6aaa0",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/building.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__guid": "ad0ffdc5-e6c8-4380-a32e-2a34ab26984c",
+            "IsTrigger": false,
+            "Model": "models/building.vmdl",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

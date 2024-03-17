@@ -1,0 +1,143 @@
+{
+  "RootObject": {
+    "__guid": "a661d131-0220-45e6-84a9-b3655df5f633",
+    "Name": "deliverypoint",
+    "Scale": "5,5,2",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "045eb1dd-cfe4-4e23-b857-0fabf7497201",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "MaterialOverride": "materials/tools/toolstrigger.vmat",
+        "Model": "models/dev/box.vmdl",
+        "RenderType": "Off",
+        "Tint": "1,1,1,0.81"
+      },
+      {
+        "__type": "BoxCollider",
+        "__guid": "17c43f75-3133-4440-b593-933b52efc03e",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "DeliveryZoneComponent",
+        "__guid": "03fd4cda-cc8c-4c57-9af5-59b6d79c184b",
+        "EnabledIndicator": {
+          "_type": "gameobject",
+          "go": "a661d131-0220-45e6-84a9-b3655df5f633"
+        }
+      },
+      {
+        "__type": "HighlightOutline",
+        "__guid": "92d59af3-e8ef-4962-ac35-f5ae1b061d67",
+        "Color": "0.15294,0.99608,0.34902,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0.15294,0.99608,0.34902,0.74902",
+        "ObscuredColor": "0.15294,0.99608,0.34967,0.75",
+        "Width": 0.25
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "425611e5-d3b9-4971-8821-1f7df663e6fd",
+        "Name": "Text",
+        "Position": "0,0,95.99998",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "TextRenderer",
+            "__guid": "e1640762-d230-42c0-a6db-376cbf586bb9",
+            "Color": "1,1,1,1",
+            "FontFamily": "Poppins",
+            "FontSize": 128,
+            "Scale": 0.84,
+            "Text": "\u2B07"
+          },
+          {
+            "__type": "EnabledIndicatorComponent",
+            "__guid": "20a9a4b7-fcbe-4934-a06b-ef8e2f97e842"
+          }
+        ]
+      },
+      {
+        "__guid": "d045ad0b-259f-4d89-a293-14e513eb98de",
+        "Name": "Line",
+        "Rotation": "0,0,0,0",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "LineRenderer",
+            "__guid": "1a06800d-fb8b-445f-9df9-69df8d6d40c7",
+            "Color": {
+              "color": [
+                {
+                  "t": 0.5,
+                  "c": "0.15277,0.99535,0.34937,1"
+                },
+                {
+                  "t": 0.9166667,
+                  "c": "0.65581,1,0.73612,1"
+                }
+              ],
+              "alpha": []
+            },
+            "EndCap": "Rounded",
+            "Opaque": false,
+            "Points": [
+              {
+                "_type": "gameobject",
+                "go": "635f5fe1-4a2d-4e7f-b43b-1b1d47316cfb"
+              },
+              {
+                "_type": "gameobject",
+                "go": "de4f00c5-83d3-4fa4-81e0-2a95cd0b2418"
+              }
+            ],
+            "SplineBias": 0,
+            "SplineContinuity": 0,
+            "SplineInterpolation": 8,
+            "SplineTension": 0,
+            "StartCap": "Rounded",
+            "Width": {
+              "rangey": "0,10",
+              "frames": [
+                {
+                  "y": 1
+                }
+              ]
+            },
+            "Wireframe": false
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "635f5fe1-4a2d-4e7f-b43b-1b1d47316cfb",
+            "Name": "Point 1",
+            "Enabled": true,
+            "NetworkMode": 2
+          },
+          {
+            "__guid": "de4f00c5-83d3-4fa4-81e0-2a95cd0b2418",
+            "Name": "Point 2",
+            "Position": "0,0,2048",
+            "Enabled": true,
+            "NetworkMode": 2
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
