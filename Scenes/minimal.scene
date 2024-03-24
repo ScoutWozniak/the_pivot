@@ -484,7 +484,7 @@
                         {
                           "__type": "MeshComponent",
                           "__guid": "292d3750-a398-4051-8f40-1719084c5b2e",
-                          "Collision": "Mesh",
+                          "Collision": "None",
                           "Color": "1,1,1,1",
                           "IsTrigger": false,
                           "Mesh": {
@@ -600,8 +600,8 @@
             "prefab": "prefabs/box.prefab"
           },
           "BreakTime": 40,
-          "DeliveriesUntillMaxDifficulty": 8,
-          "DeliveryTime": 120,
+          "DeliveriesUntillMaxDifficulty": 1,
+          "DeliveryTime": 240,
           "DifficultyCurve": {
             "rangey": "1,4",
             "frames": [
@@ -1580,7 +1580,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T21:34:55.4616775\u002B10:00",
+  "LastSaved": "2024-03-24T18:40:44.8756066\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

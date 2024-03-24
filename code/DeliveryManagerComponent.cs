@@ -113,20 +113,20 @@ public sealed class DeliveryManagerComponent : Component
 		FailUicomponent.GameOver();
 	}
 
-	DeliveryZoneComponent GetRandomZone()
-	{
-		var zones = Scene.Components.GetAll<DeliveryZoneComponent>( FindMode.EverythingInDescendants );
-
-		return zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
-	}
-
 	void GetRandomZones()
 	{
 		var zones = Scene.Components.GetAll<DeliveryZoneComponent>( FindMode.EverythingInDescendants );
+		List<DeliveryZoneComponent> prev = new();
 
 		for (int i = 0; i < GetNumDeliveries(); i++)
 		{
-			CurrentZones.Add( zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) ) );
+			var zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
+			while ( !prev.Contains( zone ) )
+			{
+				zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
+				CurrentZones.Add( zone );
+				prev.Add( zone );
+			}
 		}
 	}
 
