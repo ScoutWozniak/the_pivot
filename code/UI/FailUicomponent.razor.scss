@@ -1,0 +1,37 @@
+@import "/UI/styles.scss";
+
+FailUicomponent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	pointer-events: all;
+
+	.GameOver {
+		width: 50%;
+		height: 50%;
+		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+		transition: all 1s ease-out;
+		transform: scale( 1 );
+	}
+
+	.GameOver:intro {
+		transform: scale( 0 );
+	}
+
+	label {
+		font-size: 75px;
+		padding: 2%;
+	}
+
+	button {
+		label {
+			font-size: 30px;
+			text-stroke: 5px black;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+button {
+    border-image: url("images/panel-border-000.png") 32px;
+    background-color: #393E46;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #00ADB5;
+}
+
+button:active {
+    sound-in: "click1";
+}
+
+label {
+    font-family: Rockboxcond12;
+    font-size: 40px;
+    color: #EEEEEE;
+    filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+    text-stroke: 5px black;
+    padding: 0.1%;
+    text-align: center;
+}
+
+.panel {
+    border-image: url("images/panel-border-000.png") 32px round;
+    background-color: #222831;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

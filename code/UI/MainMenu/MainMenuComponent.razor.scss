@@ -1,0 +1,47 @@
+@import "/UI/styles.scss";
+
+MainMenuComponent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	font-family: Rockboxcond12;
+	color: #fff;
+	flex-direction: column;
+	pointer-events: all;
+	gap: 10%;
+
+
+	h1 {
+		label {
+			font-size: 128px;
+			font-weight: bold;
+		}
+	}
+
+	h2 {
+		label {
+			font-size: 60px;
+			font-weight: bold;
+		}
+	}
+
+	button {
+		height: 12%;
+		width: 15%;
+	}
+
+	.divider {
+		background-image: url("images/border-divider.png");
+		width: 30%;
+		height: 5%;
+		background-size: 100% 100%;
+		margin-bottom: 5%;
+		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+	}
+}

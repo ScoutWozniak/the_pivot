@@ -1,3 +1,5 @@
+@import "/UI/styles.scss";
+
 CustomisationUI {
 	position: absolute;
 	top: 0;
@@ -21,7 +23,6 @@ CustomisationUI {
 	}
 
 	SliderControl {
-
 		.track {
 			background-color: rgb(64, 64, 64)
 		}
@@ -34,27 +35,13 @@ CustomisationUI {
 	}
 
 	.customiser {
-		background-color: blue;
 		width: 30%;
 		height: 50%;
 		position: absolute;
 		left: 5%;
-		border-image: url("images/panel-border-000.png") 32px round;
-		background-color: rgb(135, 135, 135, 1);
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 	}
 
 	button {
 		font-size: 50px;
-		justify-content: center;
-		align-content: center;
-		border-image: url("images/panel-border-000.png") 32px round;
-		background-color: rgb(90, 196, 255);
-	}
-
-	button:hover {
-		background-color: rgb(255, 106, 0);
 	}
 }

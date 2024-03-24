@@ -121,22 +121,30 @@ public sealed class DeliveryManagerComponent : Component
 		for (int i = 0; i < GetNumDeliveries(); i++)
 		{
 			var zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
-			while ( !prev.Contains( zone ) )
+			while ( prev.Contains(zone) )
 			{
 				zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
-				CurrentZones.Add( zone );
-				prev.Add( zone );
 			}
+			CurrentZones.Add( zone );
+			prev.Add( zone );
 		}
 	}
 
 	void RestockRandomPoints()
 	{
 		var points = Scene.Components.GetAll<RestockComponent>( FindMode.EverythingInDescendants );
+		List<RestockComponent> prev = new();
 
 		for (int i = 0; i < GetNumDeliveries(); i++)
 		{
-			points.ElementAt( Game.Random.Int( points.Count() - 1 ) ).Restock();
+			var point = points.ElementAt( Game.Random.Int( points.Count() - 1 ) );
+			while ( prev.Contains( point ) )
+			{
+				point = points.ElementAt( Game.Random.Int( points.Count() - 1 ) );
+			}
+
+			prev.Add( point );
+			point.Restock();
 		}
 	}
 

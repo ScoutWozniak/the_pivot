@@ -20,6 +20,6 @@ public sealed class EnabledIndicatorComponent : Component
 		Transform.Position = originalPos + Vector3.Up * MathF.Sin(Time.Now * 5) * 20.0f;
 
 		if ( Propeller != null )
-			Propeller.Transform.LocalRotation *= new Angles( 0, 10.0f, 0.0f );
+			Propeller.Transform.LocalRotation *= new Angles( 0, 100.0f * Time.Delta, 0.0f );
 	}
 }

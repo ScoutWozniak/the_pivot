@@ -2,15 +2,14 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 
+
 <root>
-	
-	<div class="header"><label>Upgrades: $@GetMoney()</label></div>
+	<div class="panel header"><label>Upgrades: $@GetMoney()</label></div>
 
 	<div class="upgrades">
 		@if (!CheckHasUpgrade(2))
 		{
-			<div class="upgrade" onclick=@(() => BuyUpgrade(400.0f, 2))>
-				<div class="upgradebg"></div>
+			<div class="panel upgrade" onclick=@(() => BuyUpgrade(400.0f, 2))>
 				<label>Rocket Boosters</label>
 				<label>$400</label>
 				<label class="desc">Add boosters which allow for a short but sweet speed increase</label>
@@ -20,7 +19,7 @@
 
 		@if (!CheckHasUpgrade(0))
 		{
-			<div class="upgrade" onclick=@(() => BuyUpgrade(800.0f, 0))>
+			<div class="panel upgrade" onclick=@(() => BuyUpgrade(800.0f, 0))>
 				<label>+9 Charisma</label>
 				<label>$800</label>
 				<label class="desc">Develop sweettalking skills that increase the time limit</label>
@@ -29,7 +28,7 @@
 
 		@if (!CheckHasUpgrade(1))
 		{
-			<div class="upgrade" onclick=@(() => BuyUpgrade(1600.0f, 1))>
+			<div class="panel upgrade" onclick=@(() => BuyUpgrade(1600.0f, 1))>
 				<label>Propeller v2</label>
 				<label>$1600</label>
 				<label class="desc">Upgrade your propellers to make movement as smooth as butter</label>
@@ -38,7 +37,7 @@
 		}
 	</div>
 
-	<div class="close">
+	<div class="panel close">
 		<button onclick=@(() => this.Enabled = false)>Close</button>
 	</div>
 </root>
