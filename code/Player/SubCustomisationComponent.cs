@@ -9,6 +9,10 @@ public sealed class SubCustomisationComponent : Component
 
 	[Property] HatResource Hat { get; set; }
 
+	[Property] GameObject Body { get; set; }
+
+	GameObject ActiveHat { get; set; }
+
 	protected override void OnStart()
 	{
 		base.OnEnabled();
@@ -22,6 +26,7 @@ public sealed class SubCustomisationComponent : Component
 		
 
 		SubColor = new Color( data.R / 255.0f, data.G / 255.0f, data.B / 255.0f );
+		Hat = ResourceLibrary.Get<HatResource>($"data/hats/{data.HatName}.hat");
 		SetupSub();
 	}
 
@@ -35,8 +40,7 @@ public sealed class SubCustomisationComponent : Component
 		// Handle spawning in hat prefab
 		if (Hat != null)
 		{
-			var go = SceneUtility.GetPrefabScene( Hat.PrefabFile ).Clone();
-			go.SetParent( Model.GameObject, false );
+			SetHat( Hat );
 		}
 	}
 
@@ -44,6 +48,19 @@ public sealed class SubCustomisationComponent : Component
 	{
 		base.OnUpdate();
 		Model.Tint = SubColor;
+		if ( ActiveHat != null )
+			ActiveHat.Components.Get<ModelRenderer>( FindMode.EverythingInSelfAndChildren ).Tint = SubColor;
+	}
+
+	public void SetHat(HatResource hat)
+	{
+		ActiveHat?.Destroy();
+		if ( hat.PrefabFile == null )
+			return;
+		var go = SceneUtility.GetPrefabScene( hat.PrefabFile ).Clone();
+		go.SetParent( Body, false );
+		go.Components.Get<ModelRenderer>( FindMode.InDescendants ).Tint = SubColor;
+		ActiveHat = go;
 	}
 }
 
@@ -57,6 +74,7 @@ class CustomisationData
 		FileSystem.Data.WriteJson( "custom_data.json", data );
 	}
 
+	public string HatName { get; set; } = "none";
 	public static CustomisationData Load()
 	{
 		return FileSystem.Data.ReadJson<CustomisationData>( "custom_data.json" );

@@ -1,24 +1,22 @@
 {
   "RootObject": {
-    "Id": "b761bcc0-d347-4e46-8b77-92e7b3b5664d",
-    "Name": "BuildersHat",
-    "Position": "0,0,0",
+    "__guid": "f35c4f4a-4602-4d00-aaf8-610180cfb32e",
+    "Name": "bighat",
     "Enabled": true,
     "NetworkMode": 2,
     "Children": [
       {
-        "Id": "4a5e9919-c07f-47d9-946b-0e755b565a3f",
-        "Name": "Object",
-        "Position": "9.932718,0.0002975464,-227.7019",
-        "Rotation": "0,0,1,-0.00000004371139",
-        "Scale": "5,5,5",
+        "__guid": "9beb7ca6-8999-4698-afc5-255edd7689ac",
+        "Name": "bighat",
+        "Position": "-8,0,28.97366",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
+            "__guid": "bc5bbc71-0dbc-46f3-bc8f-36a69affd762",
             "BodyGroups": 18446744073709551615,
-            "Model": "models/citizen_clothes/hat/hard_hat/models/hard_hat.vmdl",
+            "Model": "models/hats/bighat.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
           }
@@ -29,5 +27,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

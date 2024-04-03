@@ -11,7 +11,6 @@ CustomisationUI {
 	font-weight: bold;
 	pointer-events: all;
 	font-family: Rockboxcond12;
-	color: #fff;
 
 
 	label {
@@ -36,12 +35,27 @@ CustomisationUI {
 
 	.customiser {
 		width: 30%;
-		height: 50%;
+		height: 70%;
 		position: absolute;
 		left: 5%;
 	}
 
 	button {
 		font-size: 50px;
+		margin: 2%;
+	}
+
+	.buttonIcon {
+		label {
+			font-family: "Material Icons";
+			font-size:50px;
+		}
+	}
+
+	DropDown {
+		width: 50%;
+		height: 10%;
+		gap: 5%;
+		color: white;
 	}
 }

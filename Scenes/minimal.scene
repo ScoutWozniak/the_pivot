@@ -41,7 +41,7 @@
             "Maxs": "16384,16384,16384"
           },
           "Feathering": 0.02,
-          "Projection": "Sphere",
+          "Projection": "Box",
           "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1"
         }
@@ -115,14 +115,6 @@
           "Scale": 0.2
         },
         {
-          "__type": "SubCamFollowerComponent",
-          "__guid": "91da316f-f3f1-4bc2-ae7a-f1f74ccfd3a7",
-          "Following": {
-            "_type": "gameobject",
-            "go": "c1509079-a580-4c38-b8fc-e823a852084f"
-          }
-        },
-        {
           "__type": "AudioListener",
           "__guid": "ab2e6afa-512a-411a-8bb2-d4b368c51da0",
           "UseCameraDirection": true
@@ -151,6 +143,15 @@
           "Contrast": 0.96,
           "HueRotate": 0,
           "Saturation": 1.18
+        },
+        {
+          "__type": "SubCamFollowerComponent",
+          "__guid": "1e7cd06d-e93c-4373-989c-5be6defc1681",
+          "CamDist": 600,
+          "Following": {
+            "_type": "gameobject",
+            "go": "c1509079-a580-4c38-b8fc-e823a852084f"
+          }
         }
       ]
     },
@@ -195,12 +196,6 @@
             "_type": "gameobject",
             "go": "3871d7ad-4e12-4e1a-ad6a-21473cb054b4"
           },
-          "Fuel": {
-            "_type": "component",
-            "component_id": "b3ee6642-632a-46d2-a1bb-ceb1d58993c9",
-            "go": "c1509079-a580-4c38-b8fc-e823a852084f",
-            "component_type": "FuelComponent"
-          },
           "RB": {
             "_type": "component",
             "component_id": "55e57e2e-fcad-4041-8cfd-bb507f20d37d",
@@ -222,6 +217,11 @@
         {
           "__type": "SubCustomisationComponent",
           "__guid": "aee59544-0436-433e-8d21-53c06f781d19",
+          "Body": {
+            "_type": "gameobject",
+            "go": "3871d7ad-4e12-4e1a-ad6a-21473cb054b4"
+          },
+          "Hat": "data/hats/chair.hat",
           "Model": {
             "_type": "component",
             "component_id": "bcb604f7-b84e-41f1-85ee-7ab152883acd",
@@ -233,12 +233,6 @@
         {
           "__type": "ImpactComponent",
           "__guid": "7d222241-8a6f-4a70-bd0f-570b83debb11"
-        },
-        {
-          "__type": "FuelComponent",
-          "__guid": "b3ee6642-632a-46d2-a1bb-ceb1d58993c9",
-          "Fuel": 100,
-          "FuelDrainRate": 1
         }
       ],
       "Children": [
@@ -266,7 +260,7 @@
             {
               "__guid": "2b4e9f44-37be-4659-9945-294e210740f7",
               "Name": "Sphere",
-              "Position": "-32,2,0",
+              "Position": "-41.48216,0,0",
               "Enabled": true,
               "NetworkMode": 2,
               "Components": [
@@ -530,24 +524,6 @@
                           "Tint": "1,1,1,1"
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "__guid": "c670b312-f135-48c0-83ad-aba76f922bf7",
-                  "Name": "Object",
-                  "Position": "31.50279,0.003172557,2.666667",
-                  "Rotation": "0.1305263,-0.000000007450581,-0.0000001490116,0.9914458",
-                  "Enabled": true,
-                  "NetworkMode": 2,
-                  "Components": [
-                    {
-                      "__type": "ModelRenderer",
-                      "__guid": "3c20eb4f-ebb1-409b-b4c3-be390b04bf7d",
-                      "BodyGroups": 18446744073709551615,
-                      "Model": "models/hats/catears.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
                     }
                   ]
                 }
@@ -1626,7 +1602,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-27T18:09:32.4756271\u002B10:00",
+  "LastSaved": "2024-04-03T15:26:47.9996149\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

@@ -1,0 +1,135 @@
+{
+  "RootObject": {
+    "__guid": "b1f78df3-e0c4-4079-83bb-9462c439f4da",
+    "Name": "ChairHat",
+    "Position": "0,0,0",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "0ebf163a-aa1f-4022-bcef-336b41c86d8f",
+        "Name": "chair",
+        "Position": "-5.828609,-0.01052825,32",
+        "Rotation": "0,0,-0.0000002682209,0.9999977",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "679822ab-627e-4e50-a7c8-e325db2c8001",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/hats/chair.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "c7196a1e-a38d-4f51-8578-2a47317ba83e",
+            "Name": "Terry",
+            "Position": "7.999993,-0.0153958,-2.666667",
+            "Scale": "0.6334131,0.6334131,0.6334131",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "__guid": "281e15c8-9ce0-41fb-92e0-103572d05ef7",
+                "BodyGroups": 341,
+                "CreateBoneObjects": false,
+                "Model": "models/citizen/citizen.vmdl",
+                "OnComponentStart": {
+                  "__version": 5,
+                  "__guid": "3828b167-b032-4356-b675-81e02f0ece2c",
+                  "UserData": {
+                    "Title": "On Component Start",
+                    "ReferencedComponentTypes": [
+                      "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input"
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                      },
+                      "UserData": {
+                        "Position": "-128,224"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "call",
+                      "Properties": {
+                        "_isStatic": false,
+                        "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                        "_name": "Set"
+                      },
+                      "UserData": {
+                        "Position": "320,256"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 1,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 2,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Value": "sit",
+                      "DstId": 2,
+                      "DstName": "v"
+                    },
+                    {
+                      "Value": 1,
+                      "DstId": 2,
+                      "DstName": "value"
+                    }
+                  ]
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "CitizenCustomisationComponent",
+                "__guid": "5b57c97d-e88a-42c8-8da9-ed33e2ba0c9a",
+                "body": {
+                  "_type": "component",
+                  "component_id": "281e15c8-9ce0-41fb-92e0-103572d05ef7",
+                  "go": "c7196a1e-a38d-4f51-8578-2a47317ba83e",
+                  "component_type": "SkinnedModelRenderer"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

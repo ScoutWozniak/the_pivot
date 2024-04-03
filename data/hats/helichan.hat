@@ -1,0 +1,8 @@
+{
+  "PrefabFile": "prefabs/hats/helicopter.prefab",
+  "Name": "Helicopter",
+  "Description": "How does this work underwater?",
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

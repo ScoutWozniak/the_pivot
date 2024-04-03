@@ -1,0 +1,8 @@
+{
+  "PrefabFile": "prefabs/hats/chair.prefab",
+  "Name": "Chair",
+  "Description": "Your own throne",
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

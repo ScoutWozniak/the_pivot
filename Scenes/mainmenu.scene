@@ -67,26 +67,20 @@
       "__guid": "ba49d320-8f96-4201-86c8-0518c018ff18",
       "Name": "Player",
       "Position": "344,-112,120",
-      "Scale": "1.5,1.5,1.5",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkinnedModelRenderer",
-          "__guid": "aa66ce62-84ec-4de1-955b-b3ba32e28125",
-          "BodyGroups": 18446744073709551615,
-          "CreateBoneObjects": false,
-          "Model": "models/sub.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
           "__type": "SubCustomisationComponent",
           "__guid": "673728a8-0338-4a61-9173-81984756a1bb",
+          "Body": {
+            "_type": "gameobject",
+            "go": "b1a01def-33c2-48d6-b16e-496adbe80540"
+          },
           "Model": {
             "_type": "component",
-            "component_id": "aa66ce62-84ec-4de1-955b-b3ba32e28125",
-            "go": "ba49d320-8f96-4201-86c8-0518c018ff18",
+            "component_id": "58592505-297a-4490-b0ff-ff5b2497ff78",
+            "go": "fe1f51e5-3d08-4369-a260-ae5d36916160",
             "component_type": "SkinnedModelRenderer"
           },
           "SubColor": "1,0,0,1"
@@ -122,6 +116,7 @@
           "Name": "Object",
           "Position": "-5.333374,0,-0.00001017253",
           "Rotation": "0,-0.7071067,0,0.7071068",
+          "Scale": "1.5,1.5,1.5",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -132,6 +127,34 @@
               "Model": "models/propeller.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "fe1f51e5-3d08-4369-a260-ae5d36916160",
+          "Name": "Body",
+          "Position": "0,0,0",
+          "Scale": "1.5,1.5,1.5",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "58592505-297a-4490-b0ff-ff5b2497ff78",
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "Model": "models/sub.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "b1a01def-33c2-48d6-b16e-496adbe80540",
+              "Name": "HatHolder",
+              "Position": "42,0.00004577637,2",
+              "Enabled": true,
+              "NetworkMode": 2
             }
           ]
         }
@@ -201,8 +224,8 @@
         {
           "__type": "SkyBox2D",
           "__guid": "30bc8f0a-ac9a-45d2-8ed1-dfaed9c0fa59",
-          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "0,0.14326,0.7814,1"
+          "SkyMaterial": "materials/skybox/sky.vmat",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -436,7 +459,7 @@
       "__guid": "a1b8569f-211a-41c1-8470-22db272b852e",
       "Name": "Plane",
       "Position": "0,0,-144",
-      "Scale": "100,100,1",
+      "Scale": "500,500,1",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -448,6 +471,78 @@
           "Model": "models/dev/plane.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4a7a04a0-d088-4590-a5a5-e8f1a8c74ca6",
+      "Name": "rock01",
+      "Position": "-238.3,479.3691,160",
+      "Rotation": "0,0,-0.5,0.8660254",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "6301249f-ba80-4044-aec9-b318bca9f5e3",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/rock01.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "92c7755c-eb04-485b-9818-7b356882adf6",
+      "Name": "rock02",
+      "Position": "91.1199,826.741,159.9999",
+      "Rotation": "0,0,-0.6087614,0.7933534",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "3cfb216d-ca3f-4b3c-9369-e51d4e89403e",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/rock02.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "a540cadb-30dd-46de-bf8c-0d3c2bd86486",
+      "Name": "house",
+      "Position": "26.59369,-1802.037,-222.3127",
+      "Rotation": "0.01703708,-0.1294095,-0.1294095,0.982963",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "4038bbf2-ea88-49bd-8c09-cbd152ebe2cf",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/house.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "a7f6c01f-3f3e-4d30-9554-39cf46aee7bd",
+      "Name": "Fog",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "GradientFog",
+          "__guid": "0a68137f-5b3e-4220-ba5d-c19b620364ce",
+          "Color": "0.13953,0.2686,1,0.46",
+          "EndDistance": 1024,
+          "FalloffExponent": 7.8999968,
+          "Height": 37.600025,
+          "StartDistance": 0,
+          "VerticalFalloffExponent": 1
         }
       ]
     }
@@ -475,7 +570,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-03-27T18:06:51.2818935\u002B10:00",
+  "LastSaved": "2024-04-03T16:23:50.7237969\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

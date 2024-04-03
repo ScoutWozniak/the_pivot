@@ -29,7 +29,6 @@ public sealed class SubmarineComponent : Component
 			return;
 
 		BuildWishVelocity();
-		Fuel.PlayerWishVel = WishVelocity;
 
 		if ( !IsBoosting )
 		{

@@ -1,0 +1,173 @@
+{
+  "RootObject": {
+    "__guid": "c3be5e36-363a-4c41-915f-0f3e4b2343a3",
+    "Name": "HeliHat",
+    "Position": "0,0,0",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "61c4e744-5943-4fed-b67a-e5b363d26b6a",
+        "Name": "helicopter",
+        "Position": "-8.497441,0.00452582,29.33333",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "f9d42359-0876-4801-9d02-91f2923e3f8b",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/hats/helicopter.vmdl",
+            "OnComponentUpdate": {
+              "__version": 5,
+              "__guid": "28b4e433-2355-435e-9d11-884a51ff9988",
+              "UserData": {
+                "Title": "On Component Update",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 4,
+                  "Type": "angles.new",
+                  "UserData": {
+                    "Position": "144,224"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "property.get",
+                  "Properties": {
+                    "_type": "Sandbox.Game/Sandbox.GameObject",
+                    "_name": "Transform"
+                  },
+                  "UserData": {
+                    "Position": "-128,32"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_type": "Sandbox.System/Angles",
+                    "_name": "ToRotation"
+                  },
+                  "UserData": {
+                    "Position": "384,208"
+                  }
+                },
+                {
+                  "Id": 13,
+                  "Type": "op.multiply",
+                  "UserData": {
+                    "Position": "592,224"
+                  }
+                },
+                {
+                  "Id": 23,
+                  "Type": "property.get",
+                  "Properties": {
+                    "_type": "Sandbox.Game/Sandbox.GameTransform",
+                    "_name": "LocalRotation"
+                  },
+                  "UserData": {
+                    "Position": "144,128"
+                  }
+                },
+                {
+                  "Id": 24,
+                  "Type": "property.set",
+                  "Properties": {
+                    "_type": "Sandbox.Game/Sandbox.GameTransform",
+                    "_name": "LocalRotation"
+                  },
+                  "UserData": {
+                    "Position": "336,32"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "Value": 0,
+                  "DstId": 4,
+                  "DstName": "pitch"
+                },
+                {
+                  "Value": 0,
+                  "DstId": 4,
+                  "DstName": "roll"
+                },
+                {
+                  "Value": 2,
+                  "DstId": 4,
+                  "DstName": "yaw"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 6,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 12,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "_result",
+                  "DstId": 23,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 24,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "_value"
+                }
+              ]
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

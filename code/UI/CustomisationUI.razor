@@ -1,5 +1,8 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using Sandbox.Resources;
+@using System.Linq;
+@using System.Collections.Generic;
 @inherits PanelComponent
 
 <root>
@@ -20,6 +23,10 @@
 			<label>B</label>
 			<SliderControl min="0" max="255" step="1" Value:bind=@B></SliderControl>
 		</div>
+
+		<label>@(GetCurrentHat().Name)</label>
+		<label style="font-size: 40px;">@(GetCurrentHat().Description)</label>
+		<button class="buttonIcon" onclick=@NextHat>arrow_forward</button>
 		
 		<button onclick=@SaveData>Save And Return</button>
 	</div>
@@ -38,6 +45,10 @@
 
 	[Property] MainMenuComponent MainMenu { get; set; }
 
+	List<HatResource> Hats { get; set; }
+
+	int ActiveHat { get; set; } = 0;
+
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
@@ -54,18 +65,47 @@
 		B = data.B;
 	}
 
+	protected override void OnTreeFirstBuilt()
+	{
+		base.OnTreeFirstBuilt();
+		Hats = ResourceLibrary.GetAll<HatResource>().ToList();
+
+		var custData = CustomisationData.Load();
+		if (custData.HatName != "none" && custData.HatName != "")
+		{
+			ActiveHat = Hats.IndexOf(ResourceLibrary.Get<HatResource>($"data/hats/{custData.HatName}.hat"));
+		}
+	}
+
 	void SaveData()
 	{
 		data.R = R;
 		data.G = G;
 		data.B = B;
+		data.HatName = GetCurrentHat().ResourceName;
 		CustomisationData.Save(data);
 		MainMenu.Enabled = true;
 		Enabled = false;
 	}
 
+	HatResource GetCurrentHat()
+	{
+		return Hats.ElementAt(ActiveHat);
+	}
+
+	void NextHat()
+	{
+		ActiveHat++;
+		if (ActiveHat == Hats.Count)
+			ActiveHat = 0;
+
+		SubCust.SetHat(GetCurrentHat());
+	}
+
+
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	//protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+	//protected override int BuildHash() => System.HashCode.Combine( Hats );
 }
