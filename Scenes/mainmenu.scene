@@ -24,7 +24,7 @@
           "ReflectionOverride": false,
           "Reflections": false,
           "Repeat": true,
-          "SoundEvent": "sounds/welcome_home.sound",
+          "SoundEvent": "sounds/music/music.menu.sound",
           "SoundOverride": true,
           "StopOnNew": false,
           "Volume": 1
@@ -232,7 +232,7 @@
     {
       "__guid": "e524add5-ce79-4060-b5f4-e949b8853d45",
       "Name": "Rotate",
-      "Position": "344,-112,120",
+      "Position": "395.3648,-112,120",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -570,11 +570,10 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-04-03T16:23:50.7237969\u002B10:00",
+  "LastSaved": "2024-04-03T16:48:24.7454216\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
-    "carsonk.mus_welcome_home",
     "pilgrim.terrystart"
   ]
 }
