@@ -195,6 +195,12 @@
             "_type": "gameobject",
             "go": "3871d7ad-4e12-4e1a-ad6a-21473cb054b4"
           },
+          "Fuel": {
+            "_type": "component",
+            "component_id": "b3ee6642-632a-46d2-a1bb-ceb1d58993c9",
+            "go": "c1509079-a580-4c38-b8fc-e823a852084f",
+            "component_type": "FuelComponent"
+          },
           "RB": {
             "_type": "component",
             "component_id": "55e57e2e-fcad-4041-8cfd-bb507f20d37d",
@@ -230,7 +236,9 @@
         },
         {
           "__type": "FuelComponent",
-          "__guid": "b3ee6642-632a-46d2-a1bb-ceb1d58993c9"
+          "__guid": "b3ee6642-632a-46d2-a1bb-ceb1d58993c9",
+          "Fuel": 100,
+          "FuelDrainRate": 1
         }
       ],
       "Children": [
@@ -524,6 +532,24 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "__guid": "c670b312-f135-48c0-83ad-aba76f922bf7",
+                  "Name": "Object",
+                  "Position": "31.50279,0.003172557,2.666667",
+                  "Rotation": "0.1305263,-0.000000007450581,-0.0000001490116,0.9914458",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "__guid": "3c20eb4f-ebb1-409b-b4c3-be390b04bf7d",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/hats/catears.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
                 }
               ]
             }
@@ -786,7 +812,7 @@
           "Color": "0.13953,0.2686,1,0.46",
           "EndDistance": 1024,
           "FalloffExponent": 1,
-          "Height": 1024,
+          "Height": 128,
           "StartDistance": 0,
           "VerticalFalloffExponent": 1
         }
@@ -1529,6 +1555,52 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "d35e9127-9cf8-48b2-9166-dac5ef476382",
+      "Name": "GasStation",
+      "Position": "0,0,264",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ec8c8b65-0a78-4452-bef6-bc909f5a4b6b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/fuelstation.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "e3da1105-43b3-48ef-ae38-7f3c33cdb735",
+          "IsTrigger": false,
+          "Model": "models/fuelstation.vmdl",
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "0fe396e6-fa2c-4514-99c3-18d983e67a76",
+          "Name": "Point Light",
+          "Position": "400,-192,0",
+          "Tags": "light_point,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "PointLight",
+              "__guid": "9b8acb05-c8b0-4261-a2e3-779f9474aaf7",
+              "Attenuation": 1,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.4186,0.86434,1,1",
+              "Radius": 800,
+              "Shadows": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1554,7 +1626,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-24T22:03:36.3848266\u002B10:00",
+  "LastSaved": "2024-03-27T18:09:32.4756271\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

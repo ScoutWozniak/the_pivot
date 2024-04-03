@@ -10,6 +10,8 @@ public sealed class SubmarineComponent : Component
 
 	[Property] RbgrabComponent RbGrab { get; set; }
 
+	[Property] FuelComponent Fuel { get; set; }
+
 	public bool IsBoosting { get; set; }
 
 	public bool CanGrab = false;
@@ -27,6 +29,7 @@ public sealed class SubmarineComponent : Component
 			return;
 
 		BuildWishVelocity();
+		Fuel.PlayerWishVel = WishVelocity;
 
 		if ( !IsBoosting )
 		{

@@ -30,6 +30,10 @@
         "EnabledIndicator": {
           "_type": "gameobject",
           "go": "a661d131-0220-45e6-84a9-b3655df5f633"
+        },
+        "ParticlePrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/deliver_particles.prefab"
         }
       },
       {
@@ -61,7 +65,8 @@
           },
           {
             "__type": "EnabledIndicatorComponent",
-            "__guid": "20a9a4b7-fcbe-4934-a06b-ef8e2f97e842"
+            "__guid": "20a9a4b7-fcbe-4934-a06b-ef8e2f97e842",
+            "LookAtCam": true
           }
         ]
       },

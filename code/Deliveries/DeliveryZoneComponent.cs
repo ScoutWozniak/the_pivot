@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public sealed class DeliveryZoneComponent : Component, Component.ITriggerListener
 {
 	[Property] GameObject EnabledIndicator { get; set; }
+
+	[Property] GameObject ParticlePrefab { get; set; }	
 	public void OnTriggerEnter( Collider other )
 	{
 		if (other.Tags.Has("grab"))
@@ -14,7 +16,7 @@ public sealed class DeliveryZoneComponent : Component, Component.ITriggerListene
 				other.GameObject.Destroy();
 
 				CheckOrderComplete();
-				
+				ParticlePrefab.Clone( Transform.Position, Transform.Rotation ); 
 			}
 		}
 	}
