@@ -11,7 +11,8 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
-        "facepunch.wooden_crate#29138"
+        "facepunch.wooden_crate#29138",
+        "quack.devgen01b#11249"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/flyaround.vmap"

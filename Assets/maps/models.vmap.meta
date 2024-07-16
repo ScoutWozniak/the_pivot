@@ -1,19 +1,14 @@
 {
   "publish": {
-    "Allowed": true,
     "Enabled": false,
     "ProjectConfig": {
       "Title": "models",
       "Type": "map",
       "Org": "local",
       "Ident": "models",
-      "Tags": null,
       "Schema": 0,
-      "HasAssets": false,
-      "AssetsPath": null,
+      "IncludeSourceFiles": false,
       "Resources": null,
-      "HasCode": false,
-      "CodePath": null,
       "PackageReferences": [],
       "EditorReferences": [],
       "Metadata": {

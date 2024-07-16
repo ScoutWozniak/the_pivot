@@ -30,7 +30,7 @@ public sealed class SubCamFollowerComponent : Component
 		
 		var tr = Scene.Trace.Ray( Following.Transform.Position, startPos ).WithoutTags("grab").Run();
 		if ( tr.Hit )
-			cam.Transform.Position = tr.HitPosition;
+			cam.Transform.Position = tr.HitPosition + tr.Normal * 2.0f;
 		else
 			cam.Transform.Position = startPos;
 	}

@@ -5,7 +5,8 @@
       "__guid": "f7861bd0-13ff-431a-8456-0848f1e09ed6",
       "Flags": 0,
       "Name": "Player",
-      "Position": "-64,-0.000003249427,64",
+      "Position": "616,-184,64.00005",
+      "Rotation": "0,0,1,0.0000001947072",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -569,6 +570,89 @@
           "LightColor": "0.04712,0.35652,0.56279,1",
           "Shadows": true,
           "SkyColor": "0.29344,0.25317,0.65581,1"
+        }
+      ]
+    },
+    {
+      "__guid": "46ff4aa4-9d20-4ecd-bebb-25676d9ad09e",
+      "Flags": 0,
+      "Name": "Object",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "750259b5-fd80-443a-a8c7-deb507dde6f6",
+          "__version": 1,
+          "MapName": "maps/flyaround.vmap",
+          "NoOrigin": false,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "97a01b68-5f44-4f7f-88a8-4abbe222692b",
+      "Flags": 0,
+      "Name": "Spot Light",
+      "Position": "144,-176,392",
+      "Rotation": "0,0.7071067,0,0.7071068",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "2e79cbc8-8675-45e2-a9d6-c7e771e18c5f",
+          "Attenuation": 0.05,
+          "ConeInner": 25.65,
+          "ConeOuter": 38.55,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.43433,1.09903,4.06,1",
+          "Radius": 500,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "255b00a3-a010-41f6-8972-c6793d643cb5",
+      "Flags": 0,
+      "Name": "Spot Light (1)",
+      "Position": "560,-176,392",
+      "Rotation": "0,0.7071067,0,0.7071068",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "dc8d56a0-7b6d-417a-8ede-2dfc054a70ab",
+          "Attenuation": 0.05,
+          "ConeInner": 25.65,
+          "ConeOuter": 38.55,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.43433,1.09903,4.06,1",
+          "Radius": 500,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "9b840fb2-4d36-4581-b3d1-f9ec67d74107",
+      "Flags": 0,
+      "Name": "Point Light",
+      "Position": "376,-192,224",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "cf8438fa-7ecf-4c31-8b42-889397a11aae",
+          "Attenuation": 1,
+          "FogMode": "Disabled",
+          "FogStrength": 1,
+          "LightColor": "0.6093,0.90884,1,1",
+          "Radius": 1052.4994,
+          "Shadows": false
         }
       ]
     }
