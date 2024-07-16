@@ -5,7 +5,7 @@
       "__guid": "f7861bd0-13ff-431a-8456-0848f1e09ed6",
       "Flags": 0,
       "Name": "Player",
-      "Position": "616,-184,64.00005",
+      "Position": "487.9999,-184,248",
       "Rotation": "0,0,1,0.0000001947072",
       "Tags": "player",
       "Enabled": true,
@@ -422,8 +422,6 @@
       "__guid": "bded2814-f28f-4aee-b2b9-8ca998600f45",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "256,-704,128",
-      "Rotation": "0,0,1,-0.00000004371139",
       "Enabled": true,
       "Components": [
         {
@@ -476,12 +474,12 @@
           "__type": "Sandbox.Tonemapping",
           "__guid": "e21f3a49-ca93-4898-8105-61ed82a58aec",
           "__version": 1,
-          "ExposureBias": 2,
+          "ExposureBias": 2.44,
           "ExposureCompensation": 0,
           "ExposureMethod": "RGB",
           "MaximumExposure": 2,
           "MinimumExposure": 1,
-          "Mode": "Legacy",
+          "Mode": "HableFilmic",
           "Rate": 1
         },
         {
@@ -497,12 +495,12 @@
         {
           "__type": "Sandbox.Pixelate",
           "__guid": "fa34e45d-09da-482a-b334-20e235322026",
-          "__enabled": false,
-          "Scale": 0.001
+          "Scale": 0.05
         },
         {
           "__type": "Sandbox.DepthOfField",
           "__guid": "3979c356-e532-4fa0-8fb4-c67ad79c39d1",
+          "__enabled": false,
           "BackBlur": true,
           "BlurSize": 100,
           "FocalDistance": 1000,
@@ -515,10 +513,10 @@
         {
           "__type": "Sandbox.ColorAdjustments",
           "__guid": "e3e6a5a2-737e-49c3-a9e7-5dec984ba000",
-          "Brightness": 1.2,
-          "Contrast": 0.96,
+          "Brightness": 0.91,
+          "Contrast": 1.03,
           "HueRotate": 0,
-          "Saturation": 1.18
+          "Saturation": 1.11
         },
         {
           "__type": "SubCamFollowerComponent",
@@ -530,11 +528,30 @@
           }
         },
         {
-          "__type": "OpiumPostprocess",
-          "__guid": "6e0ce657-3cfd-4b49-8901-d846b36b46b5",
-          "ToUse": "materials/opiumpp.vmat",
-          "UsePostProcess": true,
-          "VertexSnapping": true
+          "__type": "Sandbox.CubemapFog",
+          "__guid": "77cfe68f-8a64-425d-9637-af9747e4d7bc",
+          "Blur": 0.5,
+          "EndDistance": 4157,
+          "FalloffExponent": 3.9999988,
+          "HeightExponent": 2,
+          "HeightStart": 2000,
+          "HeightWidth": 0,
+          "Sky": "materials/skybox/sky.vmat",
+          "StartDistance": 80.399994
+        },
+        {
+          "__type": "Sandbox.ChromaticAberration",
+          "__guid": "1acc84a4-3c6b-4485-80e3-d4c6db2fbebc",
+          "__enabled": false,
+          "Offset": "4,6,0",
+          "Scale": 0.09
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "435c63bc-a4d0-4342-9d1a-e167655d790f",
+          "Intensity": 10.8,
+          "Quality": "High",
+          "Radius": 32
         }
       ]
     },
@@ -558,7 +575,8 @@
       "__guid": "0686fd4f-53e0-4fd1-a608-df851f9b3be9",
       "Flags": 0,
       "Name": "Sun",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Position": "-992,-0.00005896491,840",
+      "Rotation": "-0.0499502,0.3794095,0.1205905,0.9159757",
       "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
@@ -567,9 +585,9 @@
           "__guid": "c3eb6fb2-0021-4b66-b02f-f10518325970",
           "FogMode": "Enabled",
           "FogStrength": 1,
-          "LightColor": "0.04712,0.35652,0.56279,1",
+          "LightColor": "0.48805,0.71987,0.87442,1",
           "Shadows": true,
-          "SkyColor": "0.29344,0.25317,0.65581,1"
+          "SkyColor": "0.10998,0.25021,0.3814,1"
         }
       ]
     },
@@ -594,7 +612,7 @@
       "__guid": "97a01b68-5f44-4f7f-88a8-4abbe222692b",
       "Flags": 0,
       "Name": "Spot Light",
-      "Position": "144,-176,392",
+      "Position": "143.9999,-176,432",
       "Rotation": "0,0.7071067,0,0.7071068",
       "Tags": "light_spot,light",
       "Enabled": true,
@@ -617,7 +635,7 @@
       "__guid": "255b00a3-a010-41f6-8972-c6793d643cb5",
       "Flags": 0,
       "Name": "Spot Light (1)",
-      "Position": "560,-176,392",
+      "Position": "559.9999,-176,432",
       "Rotation": "0,0.7071067,0,0.7071068",
       "Tags": "light_spot,light",
       "Enabled": true,
@@ -653,6 +671,378 @@
           "LightColor": "0.6093,0.90884,1,1",
           "Radius": 1052.4994,
           "Shadows": false
+        }
+      ]
+    },
+    {
+      "__guid": "d2d4cb0b-3eb9-40f2-9b17-6154e703a439",
+      "Flags": 0,
+      "Name": "VolFog",
+      "Position": "-1160,0,192",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.VolumetricFogVolume",
+          "__guid": "44c2326a-07d3-48d2-9692-0c024bbc943d",
+          "Bounds": {
+            "Mins": "-2950.2,-2950.2,-506.8001",
+            "Maxs": "2735.701,2950.2,2950.2"
+          },
+          "FalloffExponent": 1,
+          "Strength": 0.3
+        }
+      ]
+    },
+    {
+      "__guid": "8a1b7037-6dfe-4b86-92a6-53b05760bc23",
+      "Flags": 0,
+      "Name": "Spot Light",
+      "Position": "-1640,680,886.9705",
+      "Rotation": "-0.09904574,0.3696438,-0.2391176,0.8923992",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "d1fcf06b-4e2a-48c2-bb47-097ef88d808f",
+          "Attenuation": 0.02,
+          "ConeInner": 15,
+          "ConeOuter": 16.29,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0,0.73457,0.95814,1",
+          "Radius": 1691.7,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "95f0663f-11d8-4469-986c-2462ae87cc5a",
+      "Flags": 0,
+      "Name": "Spot Light (2)",
+      "Position": "-1951.653,-1313.83,871.6536",
+      "Rotation": "0.09904577,0.3696438,0.2391177,0.8923992",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "542ecaf9-57f6-4446-aea7-d63e448ccdb9",
+          "Attenuation": 0.02,
+          "ConeInner": 15,
+          "ConeOuter": 16.29,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0,0.73457,0.95814,1",
+          "Radius": 1691.7,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "e1704369-5372-4a63-8c3b-70ece4679d52",
+      "Flags": 0,
+      "Name": "box",
+      "Position": "-1128,-312,80.00002",
+      "Scale": "2,2,2",
+      "Tags": "grab",
+      "Enabled": true,
+      "__Prefab": "prefabs/box.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "d1fbdaa7-9d41-4541-88f5-bae203b8da1a",
+      "Flags": 0,
+      "Name": "box (1)",
+      "Position": "-952,-48,79.99997",
+      "Scale": "2,2,2",
+      "Tags": "grab",
+      "Enabled": true,
+      "__Prefab": "prefabs/box.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "93c2e104-2f6a-46b7-ba78-189cc2fb4d99",
+      "Flags": 0,
+      "Name": "box (2)",
+      "Position": "-1320,0,79.99998",
+      "Scale": "2,2,2",
+      "Tags": "grab",
+      "Enabled": true,
+      "__Prefab": "prefabs/box.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "3be2fbf7-608f-4b03-9ff7-10d7edb85023",
+      "Flags": 0,
+      "Name": "EnvMapProbe",
+      "Position": "-1072,-152,288",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "c7037139-df9e-4b83-8b9c-7d23cee564dd",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Sphere",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "703783f5-095b-4230-9fe1-baf4b9fda3bd",
+      "Flags": 0,
+      "Name": "EnvMapProbe (1)",
+      "Position": "-1072,-152,1432",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "21d584fe-0bd9-4ae1-98a1-c694041c8337",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Sphere",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "590bb164-c2df-48fb-89dc-804a429010ba",
+      "Flags": 0,
+      "Name": "EnvMapProbe (2)",
+      "Position": "352,-151.9999,288",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "c819fdda-899a-4ddd-9099-676864305125",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Sphere",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "0a6bbd95-dc30-404c-ae96-8d95ca857efe",
+      "Flags": 0,
+      "Name": "Point Light",
+      "Position": "-944,-168,296",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "1e60e209-105d-4c96-965b-6cbbb0a6700b",
+          "Attenuation": 0.23,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.25441,0.8082,0.97674,1",
+          "Radius": 928.80005,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "ffee017f-50ea-45b8-bda4-7e5049d5ff7b",
+      "Flags": 0,
+      "Name": "Point Light (1)",
+      "Position": "-944,-168,1520",
+      "Tags": "light_point,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "56a373f3-8023-4885-80e6-3753e62b3883",
+          "Attenuation": 0.23,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.25441,0.8082,0.97674,1",
+          "Radius": 928.80005,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "3f917c45-d8d9-4dc1-ba21-db54033b6dce",
+      "Flags": 0,
+      "Name": "tower",
+      "Position": "1520,1872,240.2906",
+      "Rotation": "-0.6008633,0.3947257,0.536171,-0.4423521",
+      "Enabled": true,
+      "__Prefab": "prefabs/tower.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5341e7ba-1f40-4ded-8d6d-e275e02251ab",
+      "Flags": 0,
+      "Name": "house",
+      "Position": "1164.446,-1656,120",
+      "Rotation": "-0.04656342,0.03283992,0.8158747,0.5754144",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "321b7821-2f6d-4c8c-9d28-d2d4cc40f03d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/house.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "fcac4b86-8c45-4e2b-9c7f-2e79454534fc",
+      "Flags": 0,
+      "Name": "fuelstation",
+      "Position": "-216.4811,-2208,256",
+      "Rotation": "-0.03263517,0.111634,0.2786917,0.9533119",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "c7919619-d7bc-44c5-97c5-3c5464e02812",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/fuelstation.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "5ac60b29-6706-4032-9ae7-ca4c1c8997d0",
+      "Flags": 0,
+      "Name": "rock01",
+      "Position": "-1776,-592,56",
+      "Rotation": "-0.06526309,-0.113039,0.4957224,0.8586165",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a9904dd8-779d-43f9-aca6-4e09858d2a3d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/rock01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "8cf9a0fd-04f5-49e1-9c25-3890b754912c",
+          "IsTrigger": false,
+          "Model": "models/rock01.vmdl",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "963417a9-be23-415a-820e-15649ebfe86e",
+      "Flags": 0,
+      "Name": "rock02",
+      "Position": "1027.377,1050.211,167.6494",
+      "Rotation": "-0.05304891,-0.02992228,0.8693812,-0.4903742",
+      "Scale": "2.607447,2.607447,2.607447",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4ff03256-1ff3-4a8d-a06d-1232b85129c7",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/rock02.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "764eb595-c177-46f1-8f3c-4a05d07d7935",
+      "Flags": 0,
+      "Name": "building",
+      "Position": "-3792,-1016,936",
+      "Rotation": "0,0,0.7933534,0.6087615",
+      "Scale": "2.573547,2.573547,2.573547",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f9fe62bd-c2e2-43e2-9f19-deb8539d4f3e",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/building.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a3a01645-091d-4f15-9bad-8bd35d1231fe",
+      "Flags": 0,
+      "Name": "building (1)",
+      "Position": "-4286.303,1869.063,1176",
+      "Rotation": "-0.2053349,-0.1575591,0.5880185,0.7663205",
+      "Scale": "2.573547,2.573547,2.573547",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0416b269-c9dd-4c8d-b22d-46b075f641be",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/building.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "3501e4be-5882-4257-a1a3-b284e3ac5a1c",
+      "Flags": 0,
+      "Name": "FadeIn",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "54599c4a-c96e-4000-86bc-5d06bb76cb66",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "BlackPanel",
+          "__guid": "bbd33c25-2eb3-430f-92f3-a60dcb10ce63"
+        },
+        {
+          "__type": "FadeComponent",
+          "__guid": "ed346296-8608-4f3f-a62b-3e33a67d35e0",
+          "Time": 1
         }
       ]
     }

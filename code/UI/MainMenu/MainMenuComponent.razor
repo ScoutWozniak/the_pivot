@@ -2,31 +2,37 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 
+
+
 <root>
 	<h1>Free Delivery!</h1>
 	<div class="divider"></div>
-	<button onclick=@(() => OnPlay())>Play</button>
+	<button onclick=@(() => OnPlay(GameScene))>Play</button>
+	<button onclick=@(() => OnPlay(SandboxScene))>Sandbox</button>
 	<button onclick=@OpenCustom>Customise</button>
 </root>
 
 @code
 {
 
-	[Property] MenuOpenningComponent Opening { get; set; }
-	[Property] CustomisationUI CustomUI { get; set; }
+    [Property] MenuOpenningComponent Opening { get; set; }
+    [Property] CustomisationUI CustomUI { get; set; }
 
-	[Property] SceneFile NextScene { get; set; }
+    [Property] SceneFile NextScene { get; set; }
+
+    [Property] SceneFile GameScene { get; set; }
+    [Property] SceneFile SandboxScene { get; set; }
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
 	//protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
 
-	void OnPlay()
+	void OnPlay(SceneFile ToScene)
 	{
 		GameObject.Enabled = false;
 		FadeComponent.GlobalFadeOut();
-		_ = Opening.WaitABit();
+		_ = Opening.WaitABit(ToScene);
 	}
 
 	void OpenCustom()

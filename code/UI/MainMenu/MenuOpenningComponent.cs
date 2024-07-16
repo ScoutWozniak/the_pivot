@@ -5,10 +5,10 @@ using Sandbox.Utility;
 
 public sealed class MenuOpenningComponent : Component
 { 	[Property] SceneFile NextScene { get; set; }
-	public async Task WaitABit()
+	public async Task WaitABit(SceneFile ToScene)
 	{
 		await Task.DelayRealtimeSeconds( 2.0f );
 
-		Game.ActiveScene.Load( NextScene );
+		Game.ActiveScene.Load( ToScene );
 	}
 }

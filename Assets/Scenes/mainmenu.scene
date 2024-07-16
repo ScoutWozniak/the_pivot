@@ -3,13 +3,13 @@
   "GameObjects": [
     {
       "__guid": "d7e7d888-df51-40a5-bf9f-6afd0140e90f",
+      "Flags": 0,
       "Name": "Music",
       "Position": "-36,-100,68",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SoundPointComponent",
+          "__type": "Sandbox.SoundPointComponent",
           "__guid": "e0313d5a-e97f-4fda-99ab-75c852f827e3",
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
@@ -27,18 +27,22 @@
           "SoundEvent": "sounds/music/music.menu.sound",
           "SoundOverride": true,
           "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
           "Volume": 1
         }
       ]
     },
     {
       "__guid": "96140c84-c4d0-4a69-a202-ef0ea10e0f67",
+      "Flags": 0,
       "Name": "HUD",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
+          "__type": "Sandbox.ScreenPanel",
           "__guid": "fe83720d-31fc-43f4-8221-b7923a1dce94",
           "AutoScreenScale": true,
           "Opacity": 1,
@@ -54,26 +58,28 @@
             "go": "44c838c2-7218-4ffa-be3a-272eec03ce48",
             "component_type": "CustomisationUI"
           },
+          "GameScene": "scenes/minimal.scene",
           "Opening": {
             "_type": "component",
             "component_id": "487b32f4-281e-4757-b434-b7eb8cbc5547",
             "go": "8de2e9c3-4b9f-4d7f-9e22-2a75add43032",
             "component_type": "MenuOpenningComponent"
-          }
+          },
+          "SandboxScene": "scenes/flyaround.scene"
         },
         {
           "__type": "PauseMenuComponent",
           "__guid": "59f7f405-90e1-4e3d-bed6-da3f99564a4a",
-          "MyStringValue": "Hello World!"
+          "IsPaused": false
         }
       ]
     },
     {
       "__guid": "ba49d320-8f96-4201-86c8-0518c018ff18",
+      "Flags": 0,
       "Name": "Player",
       "Position": "344,-112,120",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SubCustomisationComponent",
@@ -95,7 +101,7 @@
           "__guid": "c1243a9f-1ec2-4f22-8bcf-975583640232",
           "LookAtCam": false,
           "OnComponentUpdate": {
-            "__version": 5,
+            "__version": 7,
             "__guid": "9b689679-8538-4dc8-88ea-7a402acf3d01",
             "UserData": {
               "Title": "On Component Update"
@@ -105,9 +111,20 @@
               {
                 "Id": 0,
                 "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "output"
               }
             ],
-            "Links": []
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              }
+            ]
           },
           "Propeller": {
             "_type": "gameobject",
@@ -118,15 +135,15 @@
       "Children": [
         {
           "__guid": "fefdb46c-6ba8-4cc6-91b7-5c41fe0f1d0a",
+          "Flags": 0,
           "Name": "Object",
           "Position": "-5.333374,0,-0.00001017253",
           "Rotation": "0,-0.7071067,0,0.7071068",
           "Scale": "1.5,1.5,1.5",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Sandbox.ModelRenderer",
               "__guid": "9e769cd7-d647-463b-ad42-f7521c9a09ca",
               "BodyGroups": 18446744073709551615,
               "Model": "models/propeller.vmdl",
@@ -137,29 +154,30 @@
         },
         {
           "__guid": "fe1f51e5-3d08-4369-a260-ae5d36916160",
+          "Flags": 0,
           "Name": "Body",
           "Position": "0,0,0",
           "Scale": "1.5,1.5,1.5",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
-              "__type": "SkinnedModelRenderer",
+              "__type": "Sandbox.SkinnedModelRenderer",
               "__guid": "58592505-297a-4490-b0ff-ff5b2497ff78",
               "BodyGroups": 18446744073709551615,
               "CreateBoneObjects": false,
               "Model": "models/sub.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             }
           ],
           "Children": [
             {
               "__guid": "b1a01def-33c2-48d6-b16e-496adbe80540",
+              "Flags": 0,
               "Name": "HatHolder",
               "Position": "42,0.00004577637,2",
-              "Enabled": true,
-              "NetworkMode": 2
+              "Enabled": true
             }
           ]
         }
@@ -167,15 +185,15 @@
     },
     {
       "__guid": "925759b4-5f57-4abb-ae88-d2056eccfa5d",
+      "Flags": 0,
       "Name": "Sun",
       "Position": "-91.64433,-28.36847,202.4167",
       "Rotation": "-0.145888,0.9646449,0.03282162,0.2170245",
       "Tags": "light_directional,light",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "DirectionalLight",
+          "__type": "Sandbox.DirectionalLight",
           "__guid": "1000aca2-211e-4ab8-b0ce-e0c003a2adf2",
           "FogMode": "Enabled",
           "FogStrength": 1,
@@ -187,15 +205,15 @@
     },
     {
       "__guid": "0f2b9e25-9b23-4245-9446-0b5ce1a80ee7",
+      "Flags": 0,
       "Name": "Point Light (1)",
       "Position": "224,-112,128",
       "Rotation": "-0.00000004371139,1,-0.00000004371139,0.000000000000001910685",
       "Tags": "light_point,light",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "PointLight",
+          "__type": "Sandbox.PointLight",
           "__guid": "89ac858f-0632-4c3a-940a-5ec7db21a70f",
           "Attenuation": 1,
           "FogMode": "Enabled",
@@ -208,14 +226,14 @@
     },
     {
       "__guid": "bd33b800-1a1d-4259-b25f-f4c0ea5a6a2d",
+      "Flags": 0,
       "Name": "Sky",
       "Position": "160,-104,176",
       "Tags": "skybox",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
           "__guid": "574c1ea2-c7c3-4e54-8ffa-2b081a28e97e",
           "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
@@ -234,7 +252,7 @@
           "ZNear": 16
         },
         {
-          "__type": "SkyBox2D",
+          "__type": "Sandbox.SkyBox2D",
           "__guid": "30bc8f0a-ac9a-45d2-8ed1-dfaed9c0fa59",
           "SkyMaterial": "materials/skybox/sky.vmat",
           "Tint": "1,1,1,1"
@@ -243,10 +261,10 @@
     },
     {
       "__guid": "e524add5-ce79-4060-b5f4-e949b8853d45",
+      "Flags": 0,
       "Name": "Rotate",
       "Position": "395.3648,-112,120",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "OrbitComponent",
@@ -257,14 +275,14 @@
       "Children": [
         {
           "__guid": "42273529-e419-4806-a2ad-47bcc7e9a359",
+          "Flags": 0,
           "Name": "Camera",
           "Position": "-266.7115,-0.00003051758,104.4836",
           "Rotation": "0,0.1640723,0,0.9864483",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
-              "__type": "CameraComponent",
+              "__type": "Sandbox.CameraComponent",
               "__guid": "99961047-b377-4676-b018-e53cc1374c0c",
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
@@ -281,7 +299,7 @@
               "ZNear": 10
             },
             {
-              "__type": "Bloom",
+              "__type": "Sandbox.Bloom",
               "__guid": "98e03705-a546-4ec3-9834-448d206c4a31",
               "BloomColor": {
                 "color": [
@@ -310,30 +328,34 @@
               "ThresholdWidth": 0.34
             },
             {
-              "__type": "Tonemapping",
+              "__type": "Sandbox.Tonemapping",
               "__guid": "0a6901be-7cf8-47eb-a7a0-1e16e19e206f",
+              "__version": 1,
+              "ExposureBias": 2,
               "ExposureCompensation": 0,
+              "ExposureMethod": "RGB",
               "MaximumExposure": 2,
               "MinimumExposure": 1,
+              "Mode": "Legacy",
               "Rate": 1
             },
             {
-              "__type": "Sharpen",
+              "__type": "Sandbox.Sharpen",
               "__guid": "286307ab-acfc-4bef-a908-904fd8c72a68",
               "Scale": 0.2
             },
             {
-              "__type": "AudioListener",
+              "__type": "Sandbox.AudioListener",
               "__guid": "9400f543-2761-4fb0-87b8-2731299a72a1",
               "UseCameraDirection": true
             },
             {
-              "__type": "Pixelate",
+              "__type": "Sandbox.Pixelate",
               "__guid": "011ec3bb-1116-46a2-b1e6-85fc3f14bdae",
               "Scale": 0.001
             },
             {
-              "__type": "DepthOfField",
+              "__type": "Sandbox.DepthOfField",
               "__guid": "9b0cd956-f842-4389-93d3-79aa7dc28e94",
               "BackBlur": true,
               "BlurSize": 100,
@@ -341,11 +363,11 @@
               "FrontBlur": false
             },
             {
-              "__type": "Highlight",
+              "__type": "Sandbox.Highlight",
               "__guid": "d0ed918c-3406-4787-83bc-96d74b56851e"
             },
             {
-              "__type": "ColorAdjustments",
+              "__type": "Sandbox.ColorAdjustments",
               "__guid": "e4f69c72-1764-4044-97a5-6b9b18adee77",
               "Brightness": 1.2,
               "Contrast": 0.96,
@@ -358,13 +380,13 @@
     },
     {
       "__guid": "44c838c2-7218-4ffa-be3a-272eec03ce48",
+      "Flags": 0,
       "Name": "CustomisationHUD",
       "Position": "137.969,0.000008223596,19.55008",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
+          "__type": "Sandbox.ScreenPanel",
           "__guid": "fbd2444a-39b9-45db-aa3f-7f9dd58105d8",
           "AutoScreenScale": true,
           "Opacity": 1,
@@ -392,13 +414,13 @@
     },
     {
       "__guid": "e4e534d6-c1e0-4ae9-a103-76b2bbbc9163",
+      "Flags": 0,
       "Name": "FadeInHud",
       "Position": "0,458.2867,0",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
+          "__type": "Sandbox.ScreenPanel",
           "__guid": "c1118987-a868-4a28-8bcb-470657087041",
           "AutoScreenScale": true,
           "Opacity": 1,
@@ -418,10 +440,10 @@
     },
     {
       "__guid": "8de2e9c3-4b9f-4d7f-9e22-2a75add43032",
+      "Flags": 0,
       "Name": "Object",
       "Position": "-1337.442,230.0739,132.1284",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MenuOpenningComponent",
@@ -432,24 +454,25 @@
     },
     {
       "__guid": "0d186de4-dcc0-4122-9077-e258144e8b3d",
+      "Flags": 0,
       "Name": "tower",
       "Position": "1305.042,972.7192,50.23926",
       "Rotation": "0.6990474,0.02415241,0.1125198,0.705754",
       "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefabs/tower.prefab"
+      "__Prefab": "prefabs/tower.prefab",
+      "__PrefabVariables": {}
     },
     {
       "__guid": "b36f2d5c-b889-45a5-8f05-653a28667503",
+      "Flags": 0,
       "Name": "terrystart (1)",
       "Position": "271.3514,-836.5524,-1076.433",
       "Rotation": "-0.1033118,-0.3050302,0.44146,0.837494",
       "Scale": "32.724,32.724,32.724",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "5500e92f-ee35-4c96-95d8-a68c21369ba4",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/dev/dev_nonmetal_rough90.vmat",
@@ -458,7 +481,7 @@
           "Tint": "0.24651,0.24651,0.24651,1"
         },
         {
-          "__type": "ModelCollider",
+          "__type": "Sandbox.ModelCollider",
           "__guid": "6c3d34f2-16ae-4e33-97a2-722fba17b1b8",
           "IsTrigger": false,
           "Model": "models/infoterryfinal/terrystart.vmdl",
@@ -469,14 +492,14 @@
     },
     {
       "__guid": "a1b8569f-211a-41c1-8470-22db272b852e",
+      "Flags": 0,
       "Name": "Plane",
       "Position": "0,0,-144",
       "Scale": "500,500,1",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "d8cc3a3c-f766-4344-8d47-e9554c7cf809",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/sand/sand.vmat",
@@ -488,66 +511,69 @@
     },
     {
       "__guid": "4a7a04a0-d088-4590-a5a5-e8f1a8c74ca6",
+      "Flags": 0,
       "Name": "rock01",
       "Position": "-238.3,479.3691,160",
       "Rotation": "0,0,-0.5,0.8660254",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Prop",
+          "__type": "Sandbox.Prop",
           "__guid": "6301249f-ba80-4044-aec9-b318bca9f5e3",
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": true,
-          "Model": "models/rock01.vmdl"
+          "Model": "models/rock01.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "92c7755c-eb04-485b-9818-7b356882adf6",
+      "Flags": 0,
       "Name": "rock02",
       "Position": "91.1199,826.741,159.9999",
       "Rotation": "0,0,-0.6087614,0.7933534",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Prop",
+          "__type": "Sandbox.Prop",
           "__guid": "3cfb216d-ca3f-4b3c-9369-e51d4e89403e",
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": true,
-          "Model": "models/rock02.vmdl"
+          "Model": "models/rock02.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "a540cadb-30dd-46de-bf8c-0d3c2bd86486",
+      "Flags": 0,
       "Name": "house",
       "Position": "26.59369,-1802.037,-222.3127",
       "Rotation": "0.01703708,-0.1294095,-0.1294095,0.982963",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Prop",
+          "__type": "Sandbox.Prop",
           "__guid": "4038bbf2-ea88-49bd-8c09-cbd152ebe2cf",
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": true,
-          "Model": "models/house.vmdl"
+          "Model": "models/house.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "a7f6c01f-3f3e-4d30-9554-39cf46aee7bd",
+      "Flags": 0,
       "Name": "Fog",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "GradientFog",
+          "__type": "Sandbox.GradientFog",
           "__guid": "0a68137f-5b3e-4220-ba5d-c19b620364ce",
           "Color": "0.13953,0.2686,1,0.46",
           "EndDistance": 1024,
@@ -560,13 +586,13 @@
     },
     {
       "__guid": "f7a3fd8e-d53f-42dc-afef-c758d2a7cd97",
+      "Flags": 0,
       "Name": "Object",
       "Position": "416,-96,128",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
           "__guid": "52b8c255-880c-4214-bdbe-83a54f7f1f4e",
           "Bounds": {
             "Mins": "-512,-512,-512",
@@ -588,9 +614,9 @@
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
-    "Lerping": true,
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
@@ -609,10 +635,9 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-04-07T13:34:06.3919272\u002B10:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "pilgrim.terrystart"
-  ]
+  ],
+  "__version": 1
 }
