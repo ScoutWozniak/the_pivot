@@ -1,0 +1,8 @@
+{
+  "PrefabFile": "prefabs/hats/cubehat.prefab",
+  "Name": "CubeHat",
+  "Description": "Thanks Sam!",
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

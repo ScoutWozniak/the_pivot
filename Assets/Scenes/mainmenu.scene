@@ -60,6 +60,11 @@
             "go": "8de2e9c3-4b9f-4d7f-9e22-2a75add43032",
             "component_type": "MenuOpenningComponent"
           }
+        },
+        {
+          "__type": "PauseMenuComponent",
+          "__guid": "59f7f405-90e1-4e3d-bed6-da3f99564a4a",
+          "MyStringValue": "Hello World!"
         }
       ]
     },
@@ -212,14 +217,21 @@
         {
           "__type": "EnvmapProbe",
           "__guid": "574c1ea2-c7c3-4e54-8ffa-2b081a28e97e",
+          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
           },
+          "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
           "Projection": "Sphere",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,1,1,1"
+          "RenderDynamically": false,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
         },
         {
           "__type": "SkyBox2D",
@@ -545,6 +557,33 @@
           "VerticalFalloffExponent": 1
         }
       ]
+    },
+    {
+      "__guid": "f7a3fd8e-d53f-42dc-afef-c758d2a7cd97",
+      "Name": "Object",
+      "Position": "416,-96,128",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "52b8c255-880c-4214-bdbe-83a54f7f1f4e",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Sphere",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -570,7 +609,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-04-03T16:48:24.7454216\u002B10:00",
+  "LastSaved": "2024-04-07T13:34:06.3919272\u002B10:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

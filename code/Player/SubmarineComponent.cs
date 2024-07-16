@@ -58,8 +58,11 @@ public sealed class SubmarineComponent : Component
 		else if ( RbGrab.CanReleaseObject() && Input.Pressed( "jump" ) )
 			RbGrab.ReleaseObject();
 
-		if ( Input.Pressed( "run" ) && Scene.Components.Get<UpgradeManager>( FindMode.InDescendants ).CanRocketBoost() && !IsBoosting && BoostCoolDownDone )
-			_ = RocketBoost();
+		if ( Scene.Components.TryGet<UpgradeManager>( out var upgrades, FindMode.InDescendants ) )
+		{
+			if ( Input.Pressed( "run" ) && upgrades.CanRocketBoost() && !IsBoosting && BoostCoolDownDone )
+				_ = RocketBoost();
+		}
 	}
 
 	protected override void OnUpdate()

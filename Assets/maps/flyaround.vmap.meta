@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "flyaround",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "flyaround",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.wooden_crate#29138"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/flyaround.vmap"
+      }
+    }
+  }
+}

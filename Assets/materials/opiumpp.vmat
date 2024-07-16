@@ -1,0 +1,15 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/goback_postprocess.shader"
+
+	//---- Bayer Matrix ----
+	TextureBayer "materials/default/default.tga"
+
+	//---- Go Back Settings ----
+	g_ColorDepth "8"
+	g_ditherenabled "1"
+	g_DitherScale "5"
+	g_vInternalResolution "[377 289]"
+}

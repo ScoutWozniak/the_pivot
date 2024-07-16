@@ -1,0 +1,68 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@if (IsPaused)
+	{
+		<div @ref=PausePanel class="pausebg">
+			<label>PAUSED</label>
+			<div class="panel">
+				
+				<button onclick=@Resume>Resume</button>
+				<button onclick=@ToMainMenu>Main Menu</button>
+			</div>
+
+		</div>
+	}
+</root>
+
+@code
+{
+	private bool _isPaused;
+	[Property] public bool IsPaused {
+		get {return _isPaused; }
+		set { _isPaused = value;
+			OnPauseStateChange(); }
+	}
+
+	[Property] SceneFile MenuScene { get; set; }
+
+
+	public Panel PausePanel { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( IsPaused );
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		if (Input.EscapePressed)
+			IsPaused = !IsPaused;
+	}
+
+	void OnPauseStateChange()
+	{
+		if (_isPaused)
+		{
+			Scene.TimeScale = 0.0f;
+			PausePanel?.Delete();
+		}
+		else
+		{
+			Scene.TimeScale = 1.0f;
+		}
+	}
+
+	void Resume()
+	{
+		IsPaused = false;
+	}
+
+	void ToMainMenu()
+	{
+		GameManager.ActiveScene.Load(MenuScene);
+	}
+}

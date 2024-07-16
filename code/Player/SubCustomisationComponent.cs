@@ -48,8 +48,13 @@ public sealed class SubCustomisationComponent : Component
 	{
 		base.OnUpdate();
 		Model.Tint = SubColor;
+
 		if ( ActiveHat != null )
-			ActiveHat.Components.Get<ModelRenderer>( FindMode.EverythingInSelfAndChildren ).Tint = SubColor;
+		{
+			if ( ActiveHat.Components.TryGet<ModelRenderer>( out var model, FindMode.EverythingInSelfAndChildren ) )
+				model.Tint = SubColor;
+		}
+			
 	}
 
 	public void SetHat(HatResource hat)
@@ -59,7 +64,7 @@ public sealed class SubCustomisationComponent : Component
 			return;
 		var go = SceneUtility.GetPrefabScene( hat.PrefabFile ).Clone();
 		go.SetParent( Body, false );
-		go.Components.Get<ModelRenderer>( FindMode.InDescendants ).Tint = SubColor;
+		
 		ActiveHat = go;
 	}
 }

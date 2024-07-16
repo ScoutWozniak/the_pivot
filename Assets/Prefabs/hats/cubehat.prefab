@@ -1,0 +1,35 @@
+{
+  "RootObject": {
+    "__guid": "d49ecad0-97e5-4ec3-a6a8-e50536b86997",
+    "Name": "cubehat",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "bb8cbe61-3bf8-452e-9a3b-914d66931bb0",
+        "Name": "Sphere",
+        "Position": "-11.16538,0.00147438,0",
+        "Scale": "1.1,1.1,1.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "b34ca928-27ad-4275-b9d7-dcce8e2a1246",
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": "materials/editor/env_cubemap_model.vmat",
+            "Model": "models/dev/sphere.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

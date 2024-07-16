@@ -20,7 +20,7 @@ public sealed class DeliveryManagerComponent : Component
 
 	public List<DeliveryZoneComponent> CurrentZones { get; set; } = new List<DeliveryZoneComponent>();
 
-	public Action OnAllDeliver;
+	public Action OnAllDeliver { get; set; }
 
 	[Property] Curve DifficultyCurve { get; set; }
 	[Property] int DeliveriesUntillMaxDifficulty { get; set; }
@@ -42,7 +42,7 @@ public sealed class DeliveryManagerComponent : Component
 	// Use this method to go to next round, will automatically choose if break or delivery
 	void NextRound()
 	{
-		OnAllDeliver.Invoke();
+		OnAllDeliver?.Invoke();
 		RoundTime = 0.0f;
 		if ( DeliveriesUntilBreak == 0 )
 			NextBreak();
