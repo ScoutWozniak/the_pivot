@@ -1,0 +1,34 @@
+{
+  "RootObject": {
+    "__guid": "b81e481a-bb73-4dba-99a3-f9324cfde07c",
+    "Flags": 0,
+    "Name": "hat",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "efe794fa-be09-41fc-ad8f-08bcda78e60d",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "-4,0,32",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "429f6252-778b-4194-9ea3-b89d1243342a",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/hats/hat.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

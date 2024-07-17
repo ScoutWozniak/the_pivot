@@ -1,20 +1,20 @@
 {
   "RootObject": {
     "__guid": "9c2f7744-e9c2-4b18-9813-fd623984f952",
+    "Flags": 0,
     "Name": "catears",
     "Enabled": true,
-    "NetworkMode": 2,
     "Children": [
       {
         "__guid": "70215b33-91b9-4f8b-bf7f-3eb082683ad5",
+        "Flags": 0,
         "Name": "Model",
         "Position": "-8,2.003189,2.666667",
         "Rotation": "0.1305263,-0.000000007450581,-0.0000001490116,0.9914458",
         "Enabled": true,
-        "NetworkMode": 2,
         "Components": [
           {
-            "__type": "ModelRenderer",
+            "__type": "Sandbox.ModelRenderer",
             "__guid": "2e3fe3ac-7d2c-4442-9466-2e90ddef0c45",
             "BodyGroups": 18446744073709551615,
             "Model": "models/hats/catears.vmdl",
@@ -22,13 +22,33 @@
             "Tint": "1,1,1,1"
           }
         ]
+      },
+      {
+        "__guid": "bc396083-9757-4ef6-ae42-ab8c04948ff1",
+        "Flags": 0,
+        "Name": "Object",
+        "Position": "-32,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "094bf966-7a0f-4cb0-a4a2-9428b061c732",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "models/sub.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          }
+        ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }

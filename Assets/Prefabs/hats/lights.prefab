@@ -1,0 +1,78 @@
+{
+  "RootObject": {
+    "__guid": "9e762ede-3a3e-4fd6-82d0-41c3e74406b6",
+    "Flags": 0,
+    "Name": "lights",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "d3edcb07-43d1-40bc-bc5c-c18e8999e4b6",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "16,-0.000004513106,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "fe171510-e08b-4937-9bf6-14793c096c26",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/hats/lights.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "df4f9940-3c02-405c-a1b2-7b0c60776799",
+        "Flags": 0,
+        "Name": "Spot Light",
+        "Position": "32,-16,4",
+        "Tags": "light_spot,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SpotLight",
+            "__guid": "dc4e76bb-ad4e-4953-9034-2171ab914331",
+            "Attenuation": 1,
+            "ConeInner": 15,
+            "ConeOuter": 45,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "0.91373,0.98039,1,1",
+            "Radius": 500,
+            "Shadows": true
+          }
+        ]
+      },
+      {
+        "__guid": "dad7cf43-b902-4079-a86d-a99dad5c3f21",
+        "Flags": 0,
+        "Name": "Spot Light (1)",
+        "Position": "32,12,4",
+        "Tags": "light_spot,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SpotLight",
+            "__guid": "a38b7d9d-3215-4597-aac5-60939cb4a69b",
+            "Attenuation": 1,
+            "ConeInner": 15,
+            "ConeOuter": 45,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "0.91373,0.98039,1,1",
+            "Radius": 500,
+            "Shadows": true
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

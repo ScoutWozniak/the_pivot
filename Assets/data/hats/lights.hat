@@ -1,0 +1,7 @@
+{
+  "PrefabFile": "prefabs/hats/lights.prefab",
+  "Name": "Headlights",
+  "Description": "Let there be more light",
+  "__references": [],
+  "__version": 0
+}

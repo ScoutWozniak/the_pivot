@@ -16,7 +16,7 @@
           "FogStrength": 1,
           "LightColor": "0.04712,0.35652,0.56279,1",
           "Shadows": true,
-          "SkyColor": "0.29344,0.25317,0.65581,1"
+          "SkyColor": "0.08426,0.08426,0.44186,1"
         }
       ]
     },
@@ -153,6 +153,25 @@
           "ToUse": "materials/opiumpp.vmat",
           "UsePostProcess": true,
           "VertexSnapping": true
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "faddce52-26d5-44f4-939c-2db8f23a5479",
+          "Intensity": 10.3,
+          "Quality": "High",
+          "Radius": 32
+        },
+        {
+          "__type": "Sandbox.CubemapFog",
+          "__guid": "77cfe68f-8a64-425d-9637-af9747e4d7bc",
+          "Blur": 0.5,
+          "EndDistance": 12471,
+          "FalloffExponent": 3.9999988,
+          "HeightExponent": 2,
+          "HeightStart": 2000,
+          "HeightWidth": 0,
+          "Sky": "materials/skybox/sky.vmat",
+          "StartDistance": 80.399994
         }
       ]
     },
@@ -649,7 +668,8 @@
         },
         {
           "__type": "GameHudComponent",
-          "__guid": "aaba46be-00c4-417d-85a5-0340076cfedd"
+          "__guid": "aaba46be-00c4-417d-85a5-0340076cfedd",
+          "UseTime": true
         }
       ]
     },
@@ -710,59 +730,8 @@
       "Rotation": "0,0,-0.1305262,0.9914449",
       "Scale": "5.999999,5.5,5",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "851d3e92-b722-4192-98ad-0aed212ae319",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/tools/toolstrigger.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0,0.81667,1,0.94"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "0aaa39da-9ad7-4eb9-9e7b-9b21b44d13d9",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "UpgradeShopComponent",
-          "__guid": "372758e8-af88-4205-b33f-8c224a533556",
-          "ShopUI": {
-            "_type": "component",
-            "component_id": "d74519af-5dd1-4907-8ea1-f7eca455bb46",
-            "go": "1a0e3161-355d-4244-bc44-bb7800845a95",
-            "component_type": "ShopUicomponent"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "1a0e3161-355d-4244-bc44-bb7800845a95",
-          "Flags": 0,
-          "Name": "ShopUI",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ScreenPanel",
-              "__guid": "3cfe0fe6-615f-4d74-98b8-6d45ffc3338b",
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 101
-            },
-            {
-              "__type": "ShopUicomponent",
-              "__guid": "d74519af-5dd1-4907-8ea1-f7eca455bb46",
-              "__enabled": false
-            }
-          ]
-        }
-      ]
+      "__Prefab": "prefabs/shop.prefab",
+      "__PrefabVariables": {}
     },
     {
       "__guid": "9cbfe3e5-8573-47d6-873c-6e46728e897b",
@@ -1645,7 +1614,7 @@
           "Feathering": 0.02,
           "FrameInterval": 16,
           "MaxDistance": 512,
-          "Projection": "Box",
+          "Projection": "Sphere",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
           "UpdateStrategy": "OnEnabled",
@@ -1734,30 +1703,6 @@
         {
           "__type": "Sandbox.SpotLight",
           "__guid": "20727aff-7ece-482f-b6e7-e5676ab81db6",
-          "Attenuation": 1,
-          "ConeInner": 15,
-          "ConeOuter": 38.55,
-          "Cookie": "shadergraph/materials/caustics/caustics_jpg_shadergraph.generated.vtex",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "144.5298,483.2202,586.3,1",
-          "Radius": 832.9999,
-          "Shadows": true
-        }
-      ]
-    },
-    {
-      "__guid": "8d8e2df3-66d4-4414-9d16-9fd1963599c4",
-      "Flags": 0,
-      "Name": "Spot Light (3)",
-      "Position": "2496,1376,767.9998",
-      "Rotation": "0,0.7071067,0,0.7071068",
-      "Tags": "light_spot,light",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpotLight",
-          "__guid": "87b96aa3-59aa-4cc1-9219-b4cee10b7353",
           "Attenuation": 1,
           "ConeInner": 15,
           "ConeOuter": 38.55,

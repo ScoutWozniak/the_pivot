@@ -592,6 +592,34 @@
       ]
     },
     {
+      "__guid": "5b3ac102-96b0-4dba-a7bb-b8eacf277a83",
+      "Flags": 0,
+      "Name": "hud",
+      "Position": "-1056,-0.000062107,384",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "51daac9f-7833-4674-a812-e6c386825c72",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 420
+        },
+        {
+          "__type": "PauseMenuComponent",
+          "__guid": "b1ffed39-3ab9-4749-a257-93adfa1030a2",
+          "IsPaused": false,
+          "MenuScene": "scenes/mainmenu.scene"
+        },
+        {
+          "__type": "GameHudComponent",
+          "__guid": "07057302-1ccd-4046-a9af-dfb29461e4d1",
+          "UseTime": false
+        }
+      ]
+    },
+    {
       "__guid": "46ff4aa4-9d20-4ecd-bebb-25676d9ad09e",
       "Flags": 0,
       "Name": "Object",
@@ -1101,34 +1129,6 @@
       "Enabled": true,
       "__Prefab": "prefabs/shop.prefab",
       "__PrefabVariables": {}
-    },
-    {
-      "__guid": "5b3ac102-96b0-4dba-a7bb-b8eacf277a83",
-      "Flags": 0,
-      "Name": "hud",
-      "Position": "-1056,-0.000062107,384",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ScreenPanel",
-          "__guid": "51daac9f-7833-4674-a812-e6c386825c72",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 329
-        },
-        {
-          "__type": "PauseMenuComponent",
-          "__guid": "b1ffed39-3ab9-4749-a257-93adfa1030a2",
-          "IsPaused": false,
-          "MenuScene": "scenes/mainmenu.scene"
-        },
-        {
-          "__type": "GameHudComponent",
-          "__guid": "07057302-1ccd-4046-a9af-dfb29461e4d1",
-          "UseTime": false
-        }
-      ]
     }
   ],
   "SceneProperties": {

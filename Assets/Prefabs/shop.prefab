@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "18d4a52e-60ac-4155-89d7-92640caeb697",
     "Flags": 0,
-    "Name": "Shop",
-    "Position": "1169.495,2519.15,208",
-    "Rotation": "0,0,-0.1305262,0.9914449",
+    "Name": "shop",
     "Scale": "5.999999,5.5,5",
     "Enabled": true,
     "Components": [
@@ -41,7 +39,6 @@
         "__guid": "1a0e3161-355d-4244-bc44-bb7800845a95",
         "Flags": 0,
         "Name": "ShopUI",
-        "Position": "0,0,0",
         "Enabled": true,
         "Components": [
           {
@@ -50,7 +47,7 @@
             "AutoScreenScale": true,
             "Opacity": 1,
             "Scale": 1,
-            "ZIndex": 101
+            "ZIndex": 1000
           },
           {
             "__type": "ShopUicomponent",
@@ -59,7 +56,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
