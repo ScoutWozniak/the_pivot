@@ -1,0 +1,19 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Submarine | Free Delivery",
+      "Type": "model",
+      "Org": "katewoz",
+      "Ident": "sub",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/sub.vmdl"
+      }
+    }
+  }
+}

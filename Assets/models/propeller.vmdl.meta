@@ -1,0 +1,19 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Propeller | Free Delivery",
+      "Type": "model",
+      "Org": "katewoz",
+      "Ident": "propeller",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/propeller.vmdl"
+      }
+    }
+  }
+}
