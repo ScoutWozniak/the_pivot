@@ -5,8 +5,8 @@
 <root>
 	@if (IsPaused)
 	{
-		<div @ref=PausePanel class="pausebg">
-			<label>PAUSED</label>
+        <div @ref=PausePanel class="pausebg" style="opacity: @(IsPaused ? 1.0f : 0.0f)">
+            <label>PAUSED</label>
 			<div class="panel">
 				
 				<button onclick=@Resume>Resume</button>

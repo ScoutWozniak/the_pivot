@@ -7,7 +7,9 @@
 	<div class="timerholder">
 		@if (!OnBreak())
 		{
+            @if (UseTime) {
 			<label>Time Left: @GetTimeLeft()</label>
+            }
 		}
 		else
 		{
@@ -31,57 +33,73 @@
 
 @code
 {
+    [Property] bool UseTime {get;set;} = true;
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine(GetTimeLeft(), GetGrabColor(), GetBoostColor());
+
+    public float GetTimeLeft()
+    {
+        var manager = Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants);
+        if(manager == null)
+                return 0.0f;
+        float time = manager.GetRoundMaxTime() - manager.RoundTime;
+        return MathF.Round(time);
+    }
+
+    public bool OnBreak()
+    {
+        if (Scene.Components.TryGet<DeliveryManagerComponent>(out var check, FindMode.EverythingInSelfAndDescendants))
+            return check.IsOnBreak();
+        else
+            return false;
+
+    }
+
+    float GetMoney()
+    {
+        return Scene.Components.Get<CashMoney>(FindMode.EverythingInDescendants).Cash;
+    }
+
+    bool CanBoost()
+    {
+        return Scene.Components.Get<UpgradeManager>(FindMode.EverythingInDescendants).CanRocketBoost();
+    }
+
+    string GetBoostColor()
+    {
+        if (!GetPlayer().IsBoosting && GetPlayer().BoostCoolDownDone)
+            return "white";
+        else
+            return "dimgrey";
+    }
 
 
-	/// <summary>
-	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
-	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(GetTimeLeft(), GetGrabColor(), GetBoostColor());
+    bool IsDelivering()
+    {
+        if (Scene.Components.TryGet<DeliveryManagerComponent>(out var check, FindMode.EverythingInSelfAndDescendants))
+            return check.ShiftState == ShiftStates.DELIVERY;
+        else
+            return false;
+    }
 
-	public float GetTimeLeft()
-	{
-		var manager = Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants);
-		float time = manager.GetRoundMaxTime() - manager.RoundTime;
-		return MathF.Round(time);
-	}
+    int GetCurrentDeliveries()
+    {
+        if (Scene.Components.TryGet<DeliveryManagerComponent>(out var check, FindMode.EverythingInSelfAndDescendants))
+            return check.GetNumDeliveries() - check.CurrentZones.Count;
+        else
+            return 0;
+    }
 
-	public bool OnBreak()
-	{
-		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).IsOnBreak();
-	}
-
-	float GetMoney()
-	{
-		return Scene.Components.Get<CashMoney>(FindMode.EverythingInDescendants).Cash;
-	}
-
-	bool CanBoost()
-	{
-		return Scene.Components.Get<UpgradeManager>(FindMode.EverythingInDescendants).CanRocketBoost();
-	}
-
-	string GetBoostColor()
-	{
-		if (!GetPlayer().IsBoosting && GetPlayer().BoostCoolDownDone)
-			return "white";
-		else
-			return "dimgrey";
-	}
-
-	bool IsDelivering()
-	{
-		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).ShiftState == ShiftStates.DELIVERY;
-	}
-
-	int GetCurrentDeliveries()
-	{
-		return GetMaxDeliveries() - Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).CurrentZones.Count;
-	}
-
-	int GetMaxDeliveries()
-	{
-		return Scene.Components.Get<DeliveryManagerComponent>(FindMode.EverythingInSelfAndDescendants).GetNumDeliveries();
-	}
+    int GetMaxDeliveries()
+    {
+        if (Scene.Components.TryGet<DeliveryManagerComponent>(out var check, FindMode.EverythingInSelfAndDescendants))
+            return check.GetNumDeliveries();
+        else
+            return 0;
+    }
 
 	string GetGrabColor()
 	{

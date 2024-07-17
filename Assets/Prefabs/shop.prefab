@@ -1,0 +1,70 @@
+{
+  "RootObject": {
+    "__guid": "18d4a52e-60ac-4155-89d7-92640caeb697",
+    "Flags": 0,
+    "Name": "Shop",
+    "Position": "1169.495,2519.15,208",
+    "Rotation": "0,0,-0.1305262,0.9914449",
+    "Scale": "5.999999,5.5,5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "851d3e92-b722-4192-98ad-0aed212ae319",
+        "BodyGroups": 18446744073709551615,
+        "MaterialOverride": "materials/tools/toolstrigger.vmat",
+        "Model": "models/dev/box.vmdl",
+        "RenderType": "On",
+        "Tint": "0,0.81667,1,0.94"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "0aaa39da-9ad7-4eb9-9e7b-9b21b44d13d9",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "UpgradeShopComponent",
+        "__guid": "372758e8-af88-4205-b33f-8c224a533556",
+        "ShopUI": {
+          "_type": "component",
+          "component_id": "d74519af-5dd1-4907-8ea1-f7eca455bb46",
+          "go": "1a0e3161-355d-4244-bc44-bb7800845a95",
+          "component_type": "ShopUicomponent"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "1a0e3161-355d-4244-bc44-bb7800845a95",
+        "Flags": 0,
+        "Name": "ShopUI",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ScreenPanel",
+            "__guid": "3cfe0fe6-615f-4d74-98b8-6d45ffc3338b",
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ZIndex": 101
+          },
+          {
+            "__type": "ShopUicomponent",
+            "__guid": "d74519af-5dd1-4907-8ea1-f7eca455bb46",
+            "__enabled": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

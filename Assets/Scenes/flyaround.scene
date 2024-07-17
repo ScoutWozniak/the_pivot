@@ -58,7 +58,7 @@
         {
           "__type": "CashMoney",
           "__guid": "2513676b-974e-4d21-8312-fd0ede5b57d9",
-          "Cash": 0
+          "Cash": 999999
         },
         {
           "__type": "SubCustomisationComponent",
@@ -689,7 +689,7 @@
             "Maxs": "2735.701,2950.2,2950.2"
           },
           "FalloffExponent": 1,
-          "Strength": 0.3
+          "Strength": 0.08
         }
       ]
     },
@@ -743,7 +743,7 @@
       "__guid": "e1704369-5372-4a63-8c3b-70ece4679d52",
       "Flags": 0,
       "Name": "box",
-      "Position": "-1128,-312,80.00002",
+      "Position": "-1128,-312,32.00002",
       "Scale": "2,2,2",
       "Tags": "grab",
       "Enabled": true,
@@ -754,7 +754,7 @@
       "__guid": "d1fbdaa7-9d41-4541-88f5-bae203b8da1a",
       "Flags": 0,
       "Name": "box (1)",
-      "Position": "-952,-48,79.99997",
+      "Position": "-952,-48,31.99997",
       "Scale": "2,2,2",
       "Tags": "grab",
       "Enabled": true,
@@ -765,7 +765,7 @@
       "__guid": "93c2e104-2f6a-46b7-ba78-189cc2fb4d99",
       "Flags": 0,
       "Name": "box (2)",
-      "Position": "-1320,0,79.99998",
+      "Position": "-1320,0,31.99998",
       "Scale": "2,2,2",
       "Tags": "grab",
       "Enabled": true,
@@ -1043,6 +1043,90 @@
           "__type": "FadeComponent",
           "__guid": "ed346296-8608-4f3f-a62b-3e33a67d35e0",
           "Time": 1
+        }
+      ]
+    },
+    {
+      "__guid": "572f5383-4f18-4ea2-b66a-4c380e012526",
+      "Flags": 0,
+      "Name": "Tutorial",
+      "Position": "32,-160,256",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "dc8f55ba-efdf-47e6-bebb-e5b4d28b8f42",
+          "Color": "0.45103,0.47149,0.5297,1",
+          "FontFamily": "Poppins",
+          "FontSize": 128,
+          "FontWeight": 800,
+          "Scale": 0.41,
+          "Text": "CONTROLS:\nW, A, S, D - Move\nE, Q - Up/Down\nSpace - Pick up objects below\n",
+          "TextAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "__guid": "08572108-ce88-4d3b-8252-83c09bccfc4e",
+      "Flags": 0,
+      "Name": "Text",
+      "Position": "-320,352,288",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "2b340e2d-813f-4cd1-9553-0980146fa880",
+          "Color": "1,1,1,1",
+          "FontFamily": "Rockboxcond12",
+          "FontSize": 128,
+          "FontWeight": 800,
+          "Scale": 0.79,
+          "Text": "Shop\uD83D\uDED2",
+          "TextAlignment": "Center"
+        },
+        {
+          "__type": "EnabledIndicatorComponent",
+          "__guid": "600ce7f1-b786-4fdb-827d-5075db2d5160",
+          "LookAtCam": true
+        }
+      ]
+    },
+    {
+      "__guid": "71314951-acbf-4137-b132-ba99f711910d",
+      "Flags": 0,
+      "Name": "Shop",
+      "Position": "-320,381.5866,63.99998",
+      "Scale": "4,4,4",
+      "Enabled": true,
+      "__Prefab": "prefabs/shop.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "5b3ac102-96b0-4dba-a7bb-b8eacf277a83",
+      "Flags": 0,
+      "Name": "hud",
+      "Position": "-1056,-0.000062107,384",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "51daac9f-7833-4674-a812-e6c386825c72",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 329
+        },
+        {
+          "__type": "PauseMenuComponent",
+          "__guid": "b1ffed39-3ab9-4749-a257-93adfa1030a2",
+          "IsPaused": false,
+          "MenuScene": "scenes/mainmenu.scene"
+        },
+        {
+          "__type": "GameHudComponent",
+          "__guid": "07057302-1ccd-4046-a9af-dfb29461e4d1",
+          "UseTime": false
         }
       ]
     }
