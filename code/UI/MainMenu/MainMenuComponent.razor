@@ -5,8 +5,10 @@
 
 
 <root>
-	<h1>Free Delivery!</h1>
-	<div class="divider"></div>
+    <div class="titleHolder">
+	    <h1>Free Delivery!</h1>
+	    <div class="divider"></div>
+    </div>
 	<button onclick=@(() => OnPlay(GameScene))>Play</button>
 	<button onclick=@(() => OnPlay(SandboxScene))>Sandbox</button>
 	<button onclick=@OpenCustom>Customise</button>
@@ -17,8 +19,6 @@
 
     [Property] MenuOpenningComponent Opening { get; set; }
     [Property] CustomisationUI CustomUI { get; set; }
-
-    [Property] SceneFile NextScene { get; set; }
 
     [Property] SceneFile GameScene { get; set; }
     [Property] SceneFile SandboxScene { get; set; }

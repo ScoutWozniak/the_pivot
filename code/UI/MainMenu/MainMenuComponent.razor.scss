@@ -7,7 +7,6 @@ MainMenuComponent {
 	right: 0;
 	bottom: 0;
 	justify-content: center;
-	align-items: center;
 	font-weight: bold;
 	border-radius: 20px;
 	font-family: Rockboxcond12;
@@ -34,16 +33,23 @@ MainMenuComponent {
 
 	button {
 		height: 12%;
-		width: 15%;
+		width: 30%;
 		margin: 5px;
 	}
 
 	.divider {
 		background-image: url("images/border-divider.png");
-		width: 30%;
-		height: 5%;
+		width: 100%;
+		height: 25%;
 		background-size: 100% 100%;
 		margin-bottom: 5%;
 		filter: drop-shadow( 0 0 10px rgba( black, 1 ) );
+	}
+
+	.titleHolder {
+		flex-direction: column;
+		height: 20%;
+		width:50%;
+		align-items: center;
 	}
 }
