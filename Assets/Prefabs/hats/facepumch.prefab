@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "__guid": "d63969f9-eadf-43d7-9347-0eeda05b31a0",
+    "Flags": 0,
+    "Name": "facepumch",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "039362c3-024a-4cd5-8354-db03452e38ba",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "20,0.00003143109,20",
+        "Rotation": "-0.270598,0.2705981,-0.6532815,0.6532816",
+        "Scale": "0.3540849,0.3540849,0.3540849",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "e62f3b77-d1b4-4652-95e0-edf622084277",
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+            "Model": "models/props/icons/facepunch_logo.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [
+    "mdlresrc.facepunch_logo#6653"
+  ],
+  "__version": 1
+}

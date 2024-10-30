@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("opiumpostprocess.unittest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40452bfdb8bbbff55fa15727bd3a6e9d97d53c92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5029e67f919246c0f0a770a8eafe72cde155e20b")]
 [assembly: System.Reflection.AssemblyProductAttribute("opiumpostprocess.unittest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("opiumpostprocess.unittest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

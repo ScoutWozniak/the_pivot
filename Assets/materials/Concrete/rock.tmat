@@ -4,7 +4,7 @@
   "NormalImage": "materials/concrete/concrete_normal.png",
   "HeightImage": "materials/default/default_height.tga",
   "AOImage": "materials/default/default_ao.tga",
-  "UVScale": 1,
+  "UVScale": 5,
   "UVRotation": 0,
   "Metalness": 0,
   "NormalStrength": 1,

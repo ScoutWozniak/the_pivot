@@ -1,46 +1,78 @@
 {
   "RootObject": {
     "__guid": "3e65306a-a9a0-4b10-850e-08049c7860c3",
+    "Flags": 0,
     "Name": "mine",
     "Enabled": true,
-    "NetworkMode": 2,
     "Components": [
       {
         "__type": "MineObstacle",
         "__guid": "6d1ef107-4ea8-4256-92f0-0c125eb03042"
       },
       {
-        "__type": "SphereCollider",
+        "__type": "Sandbox.SphereCollider",
         "__guid": "8b2a0e22-75c9-4484-b2c1-4ab66934c0f1",
         "Center": "0,0,0",
         "IsTrigger": true,
-        "Radius": 140.39993,
-        "Static": false
+        "Radius": 200.59987,
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
       }
     ],
     "Children": [
       {
         "__guid": "cb223028-756f-425c-af7b-8d84c257d595",
+        "Flags": 0,
         "Name": "Mine",
         "Enabled": true,
-        "NetworkMode": 2,
         "Components": [
           {
-            "__type": "ModelRenderer",
+            "__type": "Sandbox.ModelRenderer",
             "__guid": "5e4e4f9c-c28a-4877-99d4-bc060dffd9b6",
             "BodyGroups": 18446744073709551615,
             "Model": "models/mine.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RenderType": "On",
             "Tint": "1,1,1,1"
           }
         ]
       }
-    ]
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }

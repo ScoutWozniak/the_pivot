@@ -24,3 +24,6 @@ code/Editor/.vscode/*
 *.*_c
 *.los
 *.vpk
+/.sbox
+/Exports
+/Libraries/nolankicks.opiumpostprocess/Code/obj

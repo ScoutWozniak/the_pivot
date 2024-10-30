@@ -22,25 +22,6 @@
             "Tint": "1,1,1,1"
           }
         ]
-      },
-      {
-        "__guid": "bc396083-9757-4ef6-ae42-ab8c04948ff1",
-        "Flags": 0,
-        "Name": "Object",
-        "Position": "-32,0,0",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "094bf966-7a0f-4cb0-a4a2-9428b061c732",
-            "BodyGroups": 18446744073709551615,
-            "CreateBoneObjects": false,
-            "Model": "models/sub.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1",
-            "UseAnimGraph": true
-          }
-        ]
       }
     ],
     "__variables": []

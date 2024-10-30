@@ -2,6 +2,21 @@
   "__guid": "99e0ff1c-eacc-4913-b4af-a26a2e82f309",
   "GameObjects": [
     {
+      "__guid": "c24893d6-a9e8-4fe9-af91-15eea51e2f64",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "f175b60c-98c3-4da3-ba51-7adc477cc847",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "mainmenu"
+        }
+      ]
+    },
+    {
       "__guid": "d7e7d888-df51-40a5-bf9f-6afd0140e90f",
       "Flags": 0,
       "Name": "Music",
@@ -11,8 +26,19 @@
         {
           "__type": "Sandbox.SoundPointComponent",
           "__guid": "e0313d5a-e97f-4fda-99ab-75c852f827e3",
+          "Distance": 512,
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
+          "Falloff": [
+            {
+              "y": 1,
+              "in": 3.1415927,
+              "out": -3.1415927
+            },
+            {
+              "x": 1
+            }
+          ],
           "Force2d": true,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
@@ -47,6 +73,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
@@ -97,8 +124,9 @@
           "__guid": "c1243a9f-1ec2-4f22-8bcf-975583640232",
           "LookAtCam": false,
           "OnComponentUpdate": {
-            "__version": 7,
+            "__version": 8,
             "__guid": "9b689679-8538-4dc8-88ea-7a402acf3d01",
+            "__changeId": 0,
             "UserData": {
               "Title": "On Component Update"
             },
@@ -143,6 +171,12 @@
               "__guid": "9e769cd7-d647-463b-ad42-f7521c9a09ca",
               "BodyGroups": 18446744073709551615,
               "Model": "models/propeller.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -152,7 +186,6 @@
           "__guid": "fe1f51e5-3d08-4369-a260-ae5d36916160",
           "Flags": 0,
           "Name": "Body",
-          "Position": "0,0,0",
           "Scale": "1.5,1.5,1.5",
           "Enabled": true,
           "Components": [
@@ -162,6 +195,20 @@
               "BodyGroups": 18446744073709551615,
               "CreateBoneObjects": false,
               "Model": "models/sub.vmdl",
+              "Morphs": {},
+              "Parameters": {
+                "bools": {},
+                "ints": {},
+                "floats": {},
+                "vectors": {},
+                "rotations": {}
+              },
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
@@ -240,6 +287,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": false,
           "TintColor": "1,1,1,1",
@@ -250,6 +298,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "30bc8f0a-ac9a-45d2-8ed1-dfaed9c0fa59",
+          "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skybox/sky.vmat",
           "Tint": "1,1,1,1"
         }
@@ -312,6 +361,7 @@
           "__type": "Sandbox.Tonemapping",
           "__guid": "0a6901be-7cf8-47eb-a7a0-1e16e19e206f",
           "__version": 1,
+          "AutoExposureEnabled": true,
           "ExposureBias": 2,
           "ExposureCompensation": 0,
           "ExposureMethod": "RGB",
@@ -339,9 +389,11 @@
           "__type": "Sandbox.DepthOfField",
           "__guid": "9b0cd956-f842-4389-93d3-79aa7dc28e94",
           "BackBlur": true,
-          "BlurSize": 100,
-          "FocalDistance": 274.14,
-          "FrontBlur": false
+          "BlurSize": 15.4,
+          "FocalDistance": 445.7,
+          "FocusRange": 170.89,
+          "FrontBlur": false,
+          "QualityLevel": "High"
         },
         {
           "__type": "Sandbox.Highlight",
@@ -370,6 +422,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
@@ -404,6 +457,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
@@ -456,6 +510,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/dev/dev_nonmetal_rough90.vmat",
           "Model": "models/infoterryfinal/terrystart.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "0.24651,0.24651,0.24651,1"
         },
@@ -465,7 +525,8 @@
           "IsTrigger": false,
           "Model": "models/infoterryfinal/terrystart.vmdl",
           "Static": false,
-          "Surface": "surfaces/concrete.surface"
+          "Surface": "surfaces/concrete.surface",
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -483,6 +544,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/sand/sand.vmat",
           "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -503,6 +570,7 @@
           "Health": 0,
           "IsStatic": true,
           "Model": "models/rock01.vmdl",
+          "StartAsleep": false,
           "Tint": "1,1,1,1"
         }
       ]
@@ -522,6 +590,7 @@
           "Health": 0,
           "IsStatic": true,
           "Model": "models/rock02.vmdl",
+          "StartAsleep": false,
           "Tint": "1,1,1,1"
         }
       ]
@@ -541,6 +610,7 @@
           "Health": 0,
           "IsStatic": true,
           "Model": "models/house.vmdl",
+          "StartAsleep": false,
           "Tint": "1,1,1,1"
         }
       ]
@@ -581,6 +651,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
@@ -596,9 +667,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "mainmenu"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -612,11 +687,11 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "mainmenu",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [
-    "pilgrim.terrystart"
+    "pilgrim.terrystart#11488"
   ],
-  "__version": 1
+  "__version": 2
 }

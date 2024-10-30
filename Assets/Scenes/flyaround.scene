@@ -2,6 +2,21 @@
   "__guid": "eeca4cef-3f46-4d8e-b49a-c4097d274096",
   "GameObjects": [
     {
+      "__guid": "ad42e541-2024-4a8d-997f-06751a805e68",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "59f7957e-157c-46a5-9de6-6747506930db",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "flyaround"
+        }
+      ]
+    },
+    {
       "__guid": "f7861bd0-13ff-431a-8456-0848f1e09ed6",
       "Flags": 0,
       "Name": "Player",
@@ -21,8 +36,10 @@
             "Yaw": true,
             "Roll": true
           },
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         },
@@ -33,7 +50,8 @@
           "IsTrigger": false,
           "Radius": 50.199993,
           "Static": false,
-          "Surface": "surfaces/metal.surface"
+          "Surface": "surfaces/metal.surface",
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SubmarineComponent",
@@ -122,6 +140,12 @@
                   "__guid": "7c596f52-1f10-4e70-bf90-ea81518852f8",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/sub.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -163,7 +187,6 @@
                       "__guid": "fa0bd404-b1d7-4bdd-b832-e40511c07978",
                       "Flags": 0,
                       "Name": "Spray",
-                      "Position": "0,0,0",
                       "Rotation": "0,-0.7071067,0.000000001732218,0.7071068",
                       "Tags": "particles",
                       "Enabled": true,
@@ -171,6 +194,7 @@
                         {
                           "__type": "Sandbox.ParticleEffect",
                           "__guid": "6f84717a-1f7a-430c-abed-e3c05a0b6fef",
+                          "__version": 1,
                           "Alpha": {
                             "Type": "Curve",
                             "CurveA": [
@@ -191,6 +215,7 @@
                             ],
                             "Constants": "1,0,0,0"
                           },
+                          "ApplyAlpha": true,
                           "ApplyColor": true,
                           "ApplyRotation": false,
                           "ApplyShape": true,
@@ -243,9 +268,12 @@
                             "Constants": "1,2,0,0"
                           },
                           "MaxParticles": 100,
+                          "OrbitalForce": {},
+                          "OrbitalPull": {},
                           "PerParticleTimeScale": {
                             "Constants": "1,0.4,0,0"
                           },
+                          "Pitch": {},
                           "PreWarm": 0,
                           "PushStrength": {},
                           "Roll": {
@@ -286,6 +314,7 @@
                           },
                           "SheetSequence": false,
                           "Space": "World",
+                          "StartDelay": {},
                           "StartVelocity": {
                             "Type": "Range",
                             "Evaluation": "Particle",
@@ -293,12 +322,14 @@
                           },
                           "Stretch": {},
                           "TimeScale": 1,
-                          "Tint": "1,1,1,1"
+                          "Tint": "1,1,1,1",
+                          "Yaw": {}
                         },
                         {
                           "__type": "Sandbox.ParticleSpriteRenderer",
                           "__guid": "9b4b44c0-ec39-4df3-ad7a-f9da58863a7e",
                           "Additive": false,
+                          "Alignment": "LookAtCamera",
                           "BlurAmount": 0.5,
                           "BlurOpacity": 0.91,
                           "BlurSpacing": 0.73,
@@ -306,8 +337,15 @@
                           "FaceVelocity": false,
                           "FogStrength": 1,
                           "LeadingTrail": true,
+                          "Lighting": false,
                           "MotionBlur": false,
                           "Opaque": false,
+                          "RenderOptions": {
+                            "GameLayer": true,
+                            "OverlayLayer": false,
+                            "BloomLayer": false,
+                            "AfterUILayer": false
+                          },
                           "RotationOffset": 0,
                           "Scale": 1,
                           "Shadows": false,
@@ -327,7 +365,8 @@
                           "InVolume": false,
                           "Loop": true,
                           "OnEdge": false,
-                          "Rate": 500
+                          "Rate": 500,
+                          "RateOverDistance": 0
                         }
                       ]
                     },
@@ -341,8 +380,19 @@
                         {
                           "__type": "Sandbox.SoundPointComponent",
                           "__guid": "bd70c226-9274-42c9-8a18-7081b81a1c1a",
+                          "Distance": 512,
                           "DistanceAttenuation": false,
                           "DistanceAttenuationOverride": false,
+                          "Falloff": [
+                            {
+                              "y": 1,
+                              "in": 3.1415927,
+                              "out": -3.1415927
+                            },
+                            {
+                              "x": 1
+                            }
+                          ],
                           "Force2d": false,
                           "MaxRepeatTime": 1,
                           "MinRepeatTime": 1,
@@ -369,7 +419,6 @@
                       "__guid": "9296a3c8-82a4-4c92-95dc-e18bc6a75268",
                       "Flags": 0,
                       "Name": "propeller",
-                      "Position": "0,0,0",
                       "Enabled": true,
                       "Components": [
                         {
@@ -377,6 +426,12 @@
                           "__guid": "b4ba918d-c212-46a2-a1ef-7014ab89ebec",
                           "BodyGroups": 18446744073709551615,
                           "Model": "models/propeller.vmdl",
+                          "RenderOptions": {
+                            "GameLayer": true,
+                            "OverlayLayer": false,
+                            "BloomLayer": false,
+                            "AfterUILayer": false
+                          },
                           "RenderType": "On",
                           "Tint": "1,1,1,1"
                         }
@@ -392,14 +447,12 @@
           "__guid": "26f103ee-493d-4b46-8a27-6fb5a74b5df1",
           "Flags": 0,
           "Name": "Object",
-          "Position": "0,0,0",
           "Enabled": true
         },
         {
           "__guid": "d3f41412-0c01-4ce9-8d25-3a042dd721c9",
           "Flags": 0,
           "Name": "DropShadow",
-          "Position": "0,0,0",
           "Rotation": "-0.00000001490116,0.7071069,0.00000001490116,0.7071069",
           "Enabled": true,
           "Components": [
@@ -410,6 +463,12 @@
               "CutoffAngleSoftness": 5,
               "Material": "materials/3_circle.vmat",
               "Mod2XBlending": false,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "Size": "64,64,512",
               "TintColor": "0,0,0,0.8",
               "TriPlanar": false
@@ -474,18 +533,14 @@
           "__type": "Sandbox.Tonemapping",
           "__guid": "e21f3a49-ca93-4898-8105-61ed82a58aec",
           "__version": 1,
-          "ExposureBias": 2.44,
+          "AutoExposureEnabled": true,
+          "ExposureBias": 2,
           "ExposureCompensation": 0,
           "ExposureMethod": "RGB",
-          "MaximumExposure": 2,
+          "MaximumExposure": 3,
           "MinimumExposure": 1,
-          "Mode": "HableFilmic",
+          "Mode": "ACES",
           "Rate": 1
-        },
-        {
-          "__type": "Sandbox.Sharpen",
-          "__guid": "15daf78a-257d-493b-8cfc-a5371e721d43",
-          "Scale": 0.2
         },
         {
           "__type": "Sandbox.AudioListener",
@@ -495,28 +550,11 @@
         {
           "__type": "Sandbox.Pixelate",
           "__guid": "fa34e45d-09da-482a-b334-20e235322026",
-          "Scale": 0.05
-        },
-        {
-          "__type": "Sandbox.DepthOfField",
-          "__guid": "3979c356-e532-4fa0-8fb4-c67ad79c39d1",
-          "__enabled": false,
-          "BackBlur": true,
-          "BlurSize": 100,
-          "FocalDistance": 1000,
-          "FrontBlur": false
+          "Scale": 0.02
         },
         {
           "__type": "Sandbox.Highlight",
           "__guid": "cf03439a-057c-4ef5-b700-ca6d9ae54f81"
-        },
-        {
-          "__type": "Sandbox.ColorAdjustments",
-          "__guid": "e3e6a5a2-737e-49c3-a9e7-5dec984ba000",
-          "Brightness": 0.91,
-          "Contrast": 1.03,
-          "HueRotate": 0,
-          "Saturation": 1.11
         },
         {
           "__type": "SubCamFollowerComponent",
@@ -537,18 +575,13 @@
           "HeightStart": 2000,
           "HeightWidth": 0,
           "Sky": "materials/skybox/sky.vmat",
-          "StartDistance": 80.399994
-        },
-        {
-          "__type": "Sandbox.ChromaticAberration",
-          "__guid": "1acc84a4-3c6b-4485-80e3-d4c6db2fbebc",
-          "__enabled": false,
-          "Offset": "4,6,0",
-          "Scale": 0.09
+          "StartDistance": 80.399994,
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "Sandbox.AmbientOcclusion",
           "__guid": "435c63bc-a4d0-4342-9d1a-e167655d790f",
+          "FalloffDistance": 1,
           "Intensity": 10.8,
           "Quality": "High",
           "Radius": 32
@@ -566,6 +599,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "51759ad7-8d91-48ce-b2ad-02f7868fc809",
+          "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skybox/sky.vmat",
           "Tint": "1,1,1,1"
         }
@@ -587,7 +621,7 @@
           "FogStrength": 1,
           "LightColor": "0.48805,0.71987,0.87442,1",
           "Shadows": true,
-          "SkyColor": "0.10998,0.25021,0.3814,1"
+          "SkyColor": "0.10998,0.25021,0.3814,0"
         }
       ]
     },
@@ -604,6 +638,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 420
         },
         {
@@ -629,8 +664,11 @@
           "__type": "Sandbox.MapInstance",
           "__guid": "750259b5-fd80-443a-a8c7-deb507dde6f6",
           "__version": 1,
+          "EnableCollision": true,
           "MapName": "maps/flyaround.vmap",
           "NoOrigin": false,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
@@ -651,7 +689,7 @@
           "Attenuation": 0.05,
           "ConeInner": 25.65,
           "ConeOuter": 38.55,
-          "FogMode": "Enabled",
+          "FogMode": "Disabled",
           "FogStrength": 1,
           "LightColor": "0.43433,1.09903,4.06,1",
           "Radius": 500,
@@ -674,7 +712,7 @@
           "Attenuation": 0.05,
           "ConeInner": 25.65,
           "ConeOuter": 38.55,
-          "FogMode": "Enabled",
+          "FogMode": "Disabled",
           "FogStrength": 1,
           "LightColor": "0.43433,1.09903,4.06,1",
           "Radius": 500,
@@ -736,7 +774,7 @@
           "Attenuation": 0.02,
           "ConeInner": 15,
           "ConeOuter": 16.29,
-          "FogMode": "Enabled",
+          "FogMode": "Disabled",
           "FogStrength": 1,
           "LightColor": "0,0.73457,0.95814,1",
           "Radius": 1691.7,
@@ -759,7 +797,7 @@
           "Attenuation": 0.02,
           "ConeInner": 15,
           "ConeOuter": 16.29,
-          "FogMode": "Enabled",
+          "FogMode": "Disabled",
           "FogStrength": 1,
           "LightColor": "0,0.73457,0.95814,1",
           "Radius": 1691.7,
@@ -810,6 +848,7 @@
         {
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "c7037139-df9e-4b83-8b9c-7d23cee564dd",
+          "__enabled": false,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -818,6 +857,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
@@ -837,6 +877,7 @@
         {
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "21d584fe-0bd9-4ae1-98a1-c694041c8337",
+          "__enabled": false,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -845,6 +886,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
@@ -864,6 +906,7 @@
         {
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "c819fdda-899a-4ddd-9099-676864305125",
+          "__enabled": false,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -872,6 +915,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
@@ -913,7 +957,7 @@
           "__type": "Sandbox.PointLight",
           "__guid": "56a373f3-8023-4885-80e6-3753e62b3883",
           "Attenuation": 0.23,
-          "FogMode": "Enabled",
+          "FogMode": "Disabled",
           "FogStrength": 1,
           "LightColor": "0.25441,0.8082,0.97674,1",
           "Radius": 928.80005,
@@ -944,6 +988,12 @@
           "__guid": "321b7821-2f6d-4c8c-9d28-d2d4cc40f03d",
           "BodyGroups": 18446744073709551615,
           "Model": "models/house.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -962,6 +1012,12 @@
           "__guid": "c7919619-d7bc-44c5-97c5-3c5464e02812",
           "BodyGroups": 18446744073709551615,
           "Model": "models/fuelstation.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -980,6 +1036,12 @@
           "__guid": "a9904dd8-779d-43f9-aca6-4e09858d2a3d",
           "BodyGroups": 18446744073709551615,
           "Model": "models/rock01.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -988,7 +1050,8 @@
           "__guid": "8cf9a0fd-04f5-49e1-9c25-3890b754912c",
           "IsTrigger": false,
           "Model": "models/rock01.vmdl",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -1006,6 +1069,12 @@
           "__guid": "4ff03256-1ff3-4a8d-a06d-1232b85129c7",
           "BodyGroups": 18446744073709551615,
           "Model": "models/rock02.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -1025,6 +1094,12 @@
           "__guid": "f9fe62bd-c2e2-43e2-9f19-deb8539d4f3e",
           "BodyGroups": 18446744073709551615,
           "Model": "models/building.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -1044,6 +1119,12 @@
           "__guid": "0416b269-c9dd-4c8d-b22d-46b075f641be",
           "BodyGroups": 18446744073709551615,
           "Model": "models/building.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -1061,6 +1142,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
@@ -1085,13 +1167,42 @@
         {
           "__type": "Sandbox.TextRenderer",
           "__guid": "dc8f55ba-efdf-47e6-bebb-e5b4d28b8f42",
-          "Color": "0.45103,0.47149,0.5297,1",
-          "FontFamily": "Poppins",
-          "FontSize": 128,
-          "FontWeight": 800,
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "Scale": 0.41,
-          "Text": "CONTROLS:\nW, A, S, D - Move\nE, Q - Up/Down\nSpace - Pick up objects below\n",
-          "TextAlignment": "Center"
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "CONTROLS:\nW, A, S, D - Move\nE, Q - Up/Down\nSpace - Pick up objects below\n",
+            "TextColor": "0.45103,0.47149,0.5297,1",
+            "FontName": "Poppins",
+            "FontSize": 128,
+            "FontWeight": 800,
+            "LineHeight": 1,
+            "Outline": {
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
         }
       ]
     },
@@ -1105,13 +1216,42 @@
         {
           "__type": "Sandbox.TextRenderer",
           "__guid": "2b340e2d-813f-4cd1-9553-0980146fa880",
-          "Color": "1,1,1,1",
-          "FontFamily": "Rockboxcond12",
-          "FontSize": 128,
-          "FontWeight": 800,
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "Scale": 0.79,
-          "Text": "Shop\uD83D\uDED2",
-          "TextAlignment": "Center"
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Shop\uD83D\uDED2",
+            "TextColor": "1,1,1,1",
+            "FontName": "Rockboxcond12",
+            "FontSize": 128,
+            "FontWeight": 800,
+            "LineHeight": 1,
+            "Outline": {
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
         },
         {
           "__type": "EnabledIndicatorComponent",
@@ -1136,9 +1276,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "flyaround"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -1152,9 +1296,9 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "flyaround",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [],
-  "__version": 1
+  "__version": 2
 }
