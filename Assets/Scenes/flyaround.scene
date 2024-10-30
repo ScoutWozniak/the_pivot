@@ -1180,15 +1180,17 @@
           "TextScope": {
             "Text": "CONTROLS:\nW, A, S, D - Move\nE, Q - Up/Down\nSpace - Pick up objects below\n",
             "TextColor": "0.45103,0.47149,0.5297,1",
-            "FontName": "Poppins",
+            "FontName": "Pixel Operator",
             "FontSize": 128,
-            "FontWeight": 800,
+            "FontWeight": 1600,
             "LineHeight": 1,
             "Outline": {
+              "Enabled": true,
               "Size": 4,
-              "Color": "0,0,1,1"
+              "Color": "0,0,0,1"
             },
             "Shadow": {
+              "Enabled": true,
               "Size": 4,
               "Color": "0,0,0,1",
               "Offset": "4,4"

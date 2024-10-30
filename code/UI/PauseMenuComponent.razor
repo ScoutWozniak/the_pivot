@@ -7,9 +7,10 @@
 	{
         <div @ref=PausePanel class="pausebg" style="opacity: @(IsPaused ? 1.0f : 0.0f)">
             <label>PAUSED</label>
-			<div class="panel">
+			<div class="panel pause">
 				
 				<button onclick=@Resume>Resume</button>
+                <button onclick=@Settings>Settings</button>
 				<button onclick=@ToMainMenu>Main Menu</button>
 			</div>
 
@@ -19,50 +20,59 @@
 
 @code
 {
-	private bool _isPaused;
-	[Property] public bool IsPaused {
-		get {return _isPaused; }
-		set { _isPaused = value;
-			OnPauseStateChange(); }
-	}
+    private bool _isPaused;
+    [Property] public bool IsPaused {
+        get {return _isPaused; }
+        set { _isPaused = value;
+            OnPauseStateChange(); }
+    }
 
-	[Property] SceneFile MenuScene { get; set; }
+    [Property] SceneFile MenuScene { get; set; }
 
 
-	public Panel PausePanel { get; set; }
+    public Panel PausePanel { get; set; }
 
-	/// <summary>
-	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
-	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( IsPaused );
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( IsPaused );
 
-	protected override void OnUpdate()
-	{
-		base.OnUpdate();
-		if (Input.EscapePressed)
-			IsPaused = !IsPaused;
-	}
+    protected override void OnUpdate()
+    {
+        base.OnUpdate();
+        if (Input.EscapePressed)
+        {
+            Input.EscapePressed = false;
+            IsPaused = !IsPaused;
+        }
 
-	void OnPauseStateChange()
-	{
-		if (_isPaused)
-		{
-			Scene.TimeScale = 0.0f;
-			PausePanel?.Delete();
-		}
-		else
-		{
-			Scene.TimeScale = 1.0f;
-		}
-	}
+    }
 
-	void Resume()
-	{
-		IsPaused = false;
-	}
+    void OnPauseStateChange()
+    {
+        if (_isPaused)
+        {
+            Scene.TimeScale = 0.0f;
+            PausePanel?.Delete();
+        }
+        else
+        {
+            Scene.TimeScale = 1.0f;
+        }
+    }
 
-	void ToMainMenu()
-	{
-		GameManager.ActiveScene.Load(MenuScene);
-	}
+    void Resume()
+    {
+        IsPaused = false;
+    }
+
+    void ToMainMenu()
+    {
+        GameManager.ActiveScene.Load(MenuScene);
+    }
+
+    void Settings()
+    {
+        Game.Overlay.ShowSettingsModal();
+    }
 }

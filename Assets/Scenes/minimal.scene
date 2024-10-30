@@ -1701,15 +1701,17 @@
               "TextScope": {
                 "Text": "Shop\uD83D\uDED2",
                 "TextColor": "1,1,1,1",
-                "FontName": "Rockboxcond12",
+                "FontName": "Pixel Operator",
                 "FontSize": 128,
                 "FontWeight": 800,
                 "LineHeight": 1,
                 "Outline": {
+                  "Enabled": true,
                   "Size": 4,
-                  "Color": "0,0,1,1"
+                  "Color": "0,0,0,1"
                 },
                 "Shadow": {
+                  "Enabled": true,
                   "Size": 4,
                   "Color": "0,0,0,1",
                   "Offset": "4,4"

@@ -54,8 +54,8 @@
           "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
+            "Name": "music",
+            "Id": "fe96f50f-7478-45b5-9aaf-7ae98815a981"
           },
           "Volume": 1
         }
@@ -308,7 +308,7 @@
       "__guid": "42273529-e419-4806-a2ad-47bcc7e9a359",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "0,32,128",
+      "Position": "-24.66667,32,169.7194",
       "Enabled": true,
       "Components": [
         {

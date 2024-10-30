@@ -8,12 +8,31 @@ PauseMenuComponent {
 	bottom: 0;
 
 	.button {
-		width:100%;
-		margin:1%;
+		width: 100%;
+		margin: 1%;
+	}
+
+	label {
+		font-size: 64px;
+	}
+
+	.pause {
+		width: 50%;
+		height: 50%;
+		gap: 5%;
+		justify-content: space-around;
+
+		button {
+			width: 50%;
+
+			label {
+				font-size: 32px;
+			}
+		}
 	}
 
 	.pausebg {
-		font-size: 25px;
+		font-size: 64px;
 		font-family: Poppins;
 		color: #fff;
 		background-color: rgb(70, 70, 70, 0.42);
@@ -27,10 +46,12 @@ PauseMenuComponent {
 		transition: all 0.25s ease-out;
 		transform: scale( 1 );
 		pointer-events: all;
-		flex-direction:column;
+		flex-direction: column;
+		opacity: 1;
 		// When the element is created make it expand from nothing.
 		&:intro {
 			transform: scale( 0 );
+			opacity: 0;
 		}
 		// When the element is deleted make it double in size before being deleted.
 		&:outro {

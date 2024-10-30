@@ -24,9 +24,13 @@
 			<SliderControl min="0" max="255" step="1" Value:bind=@B></SliderControl>
 		</div>
 
-		<label>@(GetCurrentHat().Name)</label>
-		<label style="font-size: 40px;">@(GetCurrentHat().Description)</label>
+        <div class="holder">
+            <div class="hat-holder">
+		        <label>@(GetCurrentHat().Name)</label>
+		        <label style="font-size: 40px;">@(GetCurrentHat().Description)</label>
+            </div>
 		<button class="buttonIcon" onclick=@NextHat>arrow_forward</button>
+        </div>
 		
 		<button onclick=@SaveData>Save And Return</button>
 	</div>

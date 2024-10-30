@@ -12,6 +12,13 @@
 	<button onclick=@(() => OnPlay(GameScene))>Play</button>
 	<button onclick=@(() => OnPlay(SandboxScene))>Sandbox</button>
 	<button onclick=@OpenCustom>Customise</button>
+    <button onclick=@(() => Game.Overlay.ShowSettingsModal())>Settings</button>
+    <button onclick=@(() => Game.Close())>Quit</button>
+
+    <div class="review-card panel">
+        <label>Enjoyed The Game?</label>
+        <button onclick=@(() => Game.Overlay.ShowReviewModal(Package.Fetch("katewoz.the_pivot", true).Result))>Review</button>
+    </div>
 </root>
 
 @code

@@ -34,7 +34,7 @@ CustomisationUI {
 	}
 
 	.customiser {
-		width: 30%;
+		width: 40%;
 		height: 70%;
 		position: absolute;
 		left: 5%;
@@ -57,5 +57,19 @@ CustomisationUI {
 		height: 10%;
 		gap: 5%;
 		color: white;
+	}
+
+	.holder {
+		left:10%;
+		right:10%;
+		height:20%;
+		button {
+			top:0%;
+			right:0%;
+		}
+	}
+
+	.hat-holder {
+		flex-direction:column;
 	}
 }
