@@ -1,4 +1,3 @@
-using Sandbox;
 using System.Threading.Tasks;
 
 public sealed class SubmarineComponent : Component
@@ -21,8 +20,8 @@ public sealed class SubmarineComponent : Component
 	bool KnockedDown = false;
 	protected override void OnFixedUpdate()
 	{
-		if (RB.Velocity != Vector3.Zero)
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, Rotation.LookAt( RB.Velocity.Normal ), Time.Delta * 20.0f );
+		if ( RB.Velocity != Vector3.Zero )
+			Body.WorldRotation = Rotation.Lerp( Body.WorldRotation, Rotation.LookAt( RB.Velocity.Normal ), Time.Delta * 20.0f );
 
 
 		if ( KnockedDown )
@@ -38,19 +37,19 @@ public sealed class SubmarineComponent : Component
 		}
 
 		if ( IsBoosting )
-			RB.Velocity = Scene.Camera.Transform.Rotation.Forward * 2000.0f;
+			RB.Velocity = Scene.Camera.WorldRotation.Forward * 2000.0f;
 
 		//RB.Velocity += Vector3.Down;
 		if ( RB.Velocity.IsNearlyZero() )
 			RB.Velocity = Vector3.Zero;
 
 		// Rotate Body
-		
+
 
 		// Pickup Code
-		var startPos = Transform.Position;
-		var endPos = Transform.Position + Transform.Rotation.Down * 128.0f;
-		var tr = Scene.Trace.Ray(startPos, endPos).Radius(32.0f).IgnoreGameObjectHierarchy(GameObject).WithTag("grab").Run();
+		var startPos = WorldPosition;
+		var endPos = WorldPosition + WorldRotation.Down * 128.0f;
+		var tr = Scene.Trace.Ray( startPos, endPos ).Radius( 32.0f ).IgnoreGameObjectHierarchy( GameObject ).WithTag( "grab" ).Run();
 
 		CanGrab = tr.Hit;
 		if ( RbGrab.CanGrabObject() && Input.Pressed( "jump" ) && tr.Hit )
@@ -73,18 +72,18 @@ public sealed class SubmarineComponent : Component
 	void BuildWishVelocity()
 	{
 		var dir = Vector3.Zero;
-		dir += Input.AnalogMove * Scene.Camera.Transform.Rotation;
+		dir += Input.AnalogMove * Scene.Camera.WorldRotation;
 
 		if ( Input.Down( "FlyUp" ) )
-			dir += Scene.Camera.Transform.Rotation.Up;
+			dir += Scene.Camera.WorldRotation.Up;
 		if ( Input.Down( "FlyDown" ) )
-			dir -= Scene.Camera.Transform.Rotation.Up;
+			dir -= Scene.Camera.WorldRotation.Up;
 
 		WishVelocity = dir;
 		//WishVelocity = WishVelocity.WithZ( 0 );
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
-		 
+
 		WishVelocity *= 10.0f;
 	}
 
@@ -103,12 +102,12 @@ public sealed class SubmarineComponent : Component
 		BoostCoolDownDone = true;
 	}
 
-	public async Task ExplosionKnockBack(Vector3 Pos) 
+	public async Task ExplosionKnockBack( Vector3 Pos )
 	{
-		Log.Info( (Transform.Position - Pos).Normal );
+		Log.Info( (WorldPosition - Pos).Normal );
 		KnockedDown = true;
 		RB.Gravity = true;
-		RB.Velocity += ( (Transform.Position - Pos).Normal * 3000.0f );
+		RB.Velocity += ((WorldPosition - Pos).Normal * 3000.0f);
 		await Task.DelaySeconds( 3.0f );
 		KnockedDown = false;
 		RB.Gravity = false;

@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class MineObstacle : Component, Component.ITriggerListener
 {
 
@@ -8,13 +6,13 @@ public sealed class MineObstacle : Component, Component.ITriggerListener
 
 	}
 
-	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
+	void ITriggerListener.OnTriggerEnter( Sandbox.Collider other )
 	{
-		if (other.Tags.Has("player"))
+		if ( other.Tags.Has( "player" ) )
 		{
-			
-			_ = other.GameObject.Components.Get<SubmarineComponent>().ExplosionKnockBack( Transform.Position );
-			Sound.Play( "explosion", Transform.Position );
+
+			_ = other.GameObject.Components.Get<SubmarineComponent>().ExplosionKnockBack( WorldPosition );
+			Sound.Play( "explosion", WorldPosition );
 			GameObject.Destroy();
 		}
 	}

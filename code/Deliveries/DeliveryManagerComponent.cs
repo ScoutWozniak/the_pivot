@@ -1,4 +1,3 @@
-using Sandbox;
 using System;
 
 [Icon( "local_shipping" )]
@@ -9,7 +8,7 @@ public sealed class DeliveryManagerComponent : Component
 	[Property] float BreakTime { get; set; } = 60.0f;
 
 	[Property] GameObject RestockPoint { get; set; }
-	[Property] GameObject BoxPrefab { get; set; }	
+	[Property] GameObject BoxPrefab { get; set; }
 
 	int DeliveriesUntilBreak { get; set; }
 	public ShiftStates ShiftState { get; set; }
@@ -29,7 +28,7 @@ public sealed class DeliveryManagerComponent : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
-		foreach(var zone in Scene.Components.GetAll<DeliveryZoneComponent>(FindMode.EverythingInDescendants))
+		foreach ( var zone in Scene.Components.GetAll<DeliveryZoneComponent>( FindMode.EverythingInDescendants ) )
 		{
 			zone.GameObject.Enabled = false;
 		}
@@ -81,10 +80,10 @@ public sealed class DeliveryManagerComponent : Component
 		}
 	}
 
-	public void OnDeliver(DeliveryZoneComponent Zone)
+	public void OnDeliver( DeliveryZoneComponent Zone )
 	{
 		CurrentZones.Remove( Zone );
-		Scene.Components.Get<CashMoney>( FindMode.EverythingInDescendants ).Pay((int)GetMoney());
+		Scene.Components.Get<CashMoney>( FindMode.EverythingInDescendants ).Pay( (int)GetMoney() );
 		if ( ShouldDoNextRound() )
 		{
 			Sound.Play( "narrator.win" );
@@ -94,13 +93,13 @@ public sealed class DeliveryManagerComponent : Component
 
 	void Restock()
 	{
-		var go = BoxPrefab.Clone( RestockPoint.Transform.Position );
+		var go = BoxPrefab.Clone( RestockPoint.WorldPosition );
 	}
 
 	public float GetRoundMaxTime()
 	{
-		if (ShiftState == ShiftStates.DELIVERY)
-			return DeliveryTime + Scene.Components.Get<UpgradeManager>(FindMode.InDescendants).GetExtraTime(); 
+		if ( ShiftState == ShiftStates.DELIVERY )
+			return DeliveryTime + Scene.Components.Get<UpgradeManager>( FindMode.InDescendants ).GetExtraTime();
 		else
 			return BreakTime;
 	}
@@ -118,10 +117,10 @@ public sealed class DeliveryManagerComponent : Component
 		var zones = Scene.Components.GetAll<DeliveryZoneComponent>( FindMode.EverythingInDescendants );
 		List<DeliveryZoneComponent> prev = new();
 
-		for (int i = 0; i < GetNumDeliveries(); i++)
+		for ( int i = 0; i < GetNumDeliveries(); i++ )
 		{
 			var zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
-			while ( prev.Contains(zone) )
+			while ( prev.Contains( zone ) )
 			{
 				zone = zones.ElementAt( Game.Random.Int( zones.Count() - 1 ) );
 			}
@@ -135,7 +134,7 @@ public sealed class DeliveryManagerComponent : Component
 		var points = Scene.Components.GetAll<RestockComponent>( FindMode.EverythingInDescendants );
 		List<RestockComponent> prev = new();
 
-		for (int i = 0; i < GetNumDeliveries(); i++)
+		for ( int i = 0; i < GetNumDeliveries(); i++ )
 		{
 			var point = points.ElementAt( Game.Random.Int( points.Count() - 1 ) );
 			while ( prev.Contains( point ) )
@@ -163,7 +162,7 @@ public sealed class DeliveryManagerComponent : Component
 
 	float GetMoney()
 	{
-		return ( (GetRoundMaxTime() - RoundTime) / GetRoundMaxTime()) * 600.0f;
+		return ((GetRoundMaxTime() - RoundTime) / GetRoundMaxTime()) * 600.0f;
 	}
 
 	public int GetNumDeliveries()
@@ -176,4 +175,4 @@ public enum ShiftStates
 {
 	DELIVERY,
 	BREAK
-} 
+}

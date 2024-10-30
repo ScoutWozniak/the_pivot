@@ -1,4 +1,3 @@
-using Sandbox;
 using System;
 
 public sealed class EnabledIndicatorComponent : Component
@@ -11,15 +10,15 @@ public sealed class EnabledIndicatorComponent : Component
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
-		originalPos = Transform.Position;
+		originalPos = WorldPosition;
 	}
 	protected override void OnUpdate()
 	{
-		if (LookAtCam)
-			Transform.Rotation = Rotation.LookAt( -(Scene.Camera.Transform.Position - Transform.Position) );
-		Transform.Position = originalPos + Vector3.Up * MathF.Sin(Time.Now * 5) * 20.0f;
+		if ( LookAtCam )
+			WorldRotation = Rotation.LookAt( -(Scene.Camera.WorldPosition - WorldPosition) );
+		WorldPosition = originalPos + Vector3.Up * MathF.Sin( Time.Now * 5 ) * 20.0f;
 
 		if ( Propeller != null )
-			Propeller.Transform.LocalRotation *= new Angles( 0, 100.0f * Time.Delta, 0.0f );
+			Propeller.LocalRotation *= new Angles( 0, 100.0f * Time.Delta, 0.0f );
 	}
 }

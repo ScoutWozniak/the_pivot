@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class MineFieldComponent : Component
 {
 	[Property] float BoxSize { get; set; } = 256.0f;
@@ -16,9 +14,9 @@ public sealed class MineFieldComponent : Component
 		base.OnStart();
 		Points = GetRandomPointsWithRadius( Mines, Radius );
 
-		foreach( var point in Points )
+		foreach ( var point in Points )
 		{
-			MinePrefab.Clone(Transform.Position +  point);
+			MinePrefab.Clone( WorldPosition + point );
 		}
 	}
 
@@ -36,16 +34,17 @@ public sealed class MineFieldComponent : Component
 		if ( Points == null )
 			return;
 
-		foreach( var point in Points ) {
+		foreach ( var point in Points )
+		{
 			Gizmo.Draw.LineSphere( point, 32.0f );
 		}
 	}
 
-	List<Vector3> GetRandomPointsWithRadius(float amount, float radius)
+	List<Vector3> GetRandomPointsWithRadius( float amount, float radius )
 	{
 		List<Vector3> points = new List<Vector3>();
 
-		for ( int i = 0; i < amount; i++)
+		for ( int i = 0; i < amount; i++ )
 		{
 			Vector3 newPoint = new();
 			bool CanBreak = true;

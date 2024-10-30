@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class RestockComponent : Component
 {
 	[Property] GameObject ToSpawn { get; set; }
@@ -22,13 +20,13 @@ public sealed class RestockComponent : Component
 	public void Restock()
 	{
 		LineRenderer.Enabled = true;
-		var go = ToSpawn.Clone( SpawnPoint.Transform.Position, Transform.Rotation );
+		var go = ToSpawn.Clone( SpawnPoint.WorldPosition, WorldRotation );
 	}
 
 	protected override void DrawGizmos()
 	{
 		base.DrawGizmos();
 		if ( SpawnPoint == null ) return;
-		Gizmo.Draw.LineBBox( BBox.FromPositionAndSize(SpawnPoint.Transform.Position, 32.0f) );
+		Gizmo.Draw.LineBBox( BBox.FromPositionAndSize( SpawnPoint.WorldPosition, 32.0f ) );
 	}
 }

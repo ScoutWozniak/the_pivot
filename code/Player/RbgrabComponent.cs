@@ -1,14 +1,12 @@
-using Sandbox;
-
 public sealed class RbgrabComponent : Component
 {
 	GameObject HeldObject { get; set; }
 	protected override void OnFixedUpdate()
 	{
-		
-		if (HeldObject != null)
+
+		if ( HeldObject != null )
 		{
-			if (!HeldObject.IsValid)
+			if ( !HeldObject.IsValid )
 				HeldObject = null;
 			else
 				MoveObjectToPoint();
@@ -17,18 +15,20 @@ public sealed class RbgrabComponent : Component
 
 	public bool CanGrabObject()
 	{
-		if (HeldObject == null)
+		if ( HeldObject == null )
 			return true;
 		return false;
 	}
 
-	public void GrabObject(GameObject go ) {
+	public void GrabObject( GameObject go )
+	{
 		HeldObject = go;
 		var rb = HeldObject.Components.Get<Rigidbody>();
 		rb.Gravity = false;
 	}
 
-	public void ReleaseObject() {
+	public void ReleaseObject()
+	{
 		var rb = HeldObject.Components.Get<Rigidbody>();
 		rb.Gravity = true;
 
@@ -42,10 +42,11 @@ public sealed class RbgrabComponent : Component
 		return false;
 	}
 
-	void MoveObjectToPoint() {
+	void MoveObjectToPoint()
+	{
 		var rb = HeldObject.Components.Get<Rigidbody>();
-		rb.Velocity = (Transform.Position - rb.Transform.Position) * 15;
-		if ( (Transform.Position - rb.Transform.Position).Length > 90 )
+		rb.Velocity = (WorldPosition - rb.WorldPosition) * 15;
+		if ( (WorldPosition - rb.WorldPosition).Length > 90 )
 			ReleaseObject();
 	}
 }

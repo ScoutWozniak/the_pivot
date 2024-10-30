@@ -1,16 +1,14 @@
-using Sandbox;
-
 public sealed class SubCamFollowerComponent : Component
 {
 	public Angles EyeAngles { get; set; }
 	[Property] GameObject Following { get; set; }
 
-	[Property] float CamDist { get; set; }	
+	[Property] float CamDist { get; set; }
 
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
-		EyeAngles = Following.Transform.Rotation.Angles();
+		EyeAngles = Following.WorldRotation.Angles();
 	}
 
 	protected override void OnUpdate()
@@ -22,16 +20,16 @@ public sealed class SubCamFollowerComponent : Component
 
 		var cam = Scene.Camera;
 		var lookDir = EyeAngles.ToRotation();
-		cam.Transform.Rotation = lookDir;
-		var startPos = (Following.Transform.Position + lookDir.Backward * CamDist + Vector3.Up * 64.0f);
+		cam.WorldRotation = lookDir;
+		var startPos = (Following.WorldPosition + lookDir.Backward * CamDist + Vector3.Up * 64.0f);
 
 		CamDist -= Input.MouseWheel.y * 30.0f;
 		CamDist = MathX.Clamp( CamDist, 200, 1000 );
-		
-		var tr = Scene.Trace.Ray( Following.Transform.Position, startPos ).WithoutTags("grab").Run();
+
+		var tr = Scene.Trace.Ray( Following.WorldPosition, startPos ).WithoutTags( "grab" ).Run();
 		if ( tr.Hit )
-			cam.Transform.Position = tr.HitPosition + tr.Normal * 2.0f;
+			cam.WorldPosition = tr.HitPosition + tr.Normal * 2.0f;
 		else
-			cam.Transform.Position = startPos;
+			cam.WorldPosition = startPos;
 	}
 }

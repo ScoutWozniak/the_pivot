@@ -1,6 +1,3 @@
-using Sandbox;
-using System;
-
 public sealed class PropellerComponent : Component
 {
 	[Property] Rigidbody Sub { get; set; }
@@ -10,10 +7,10 @@ public sealed class PropellerComponent : Component
 	{
 		Angles addAng = new Angles();
 		addAng.yaw = Sub.Velocity.Length / 100.0f;
-		Transform.LocalRotation *= addAng.ToRotation();
+		LocalRotation *= addAng.ToRotation();
 		if ( (Sub.Velocity.Length / 100.0f) <= 2.0f )
 			Particles.Enabled = false;
-		else 
+		else
 			Particles.Enabled = true;
 
 
